@@ -1,33 +1,7 @@
 // Set a variable that contains all the fields needed for articles when a fetch for
 // content is performed
-const ARTICLE_GRAPHQL_FIELDS = `
-  sys {
-    id
-  }
-  title
-  slug
-  summary
-  details {
-    json
-    links {
-      assets {
-        block {
-          sys {
-            id
-          }
-          url
-          description
-        }
-      }
-    }
-  }
-  date
-  authorName
-  categoryName
-  articleImage {
-    url
-  }
-`;
+
+import { ARTICLE_GRAPHQL_FIELDS } from "./graphql/articles";
 
 async function fetchGraphQL(query: any, preview = false) {
   return fetch(
