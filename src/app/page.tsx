@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default async function Home() {
   const articles = await getAllArticles();
-
+  console.log(articles);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-white">
       <section className="w-full pt-12">
@@ -23,7 +23,7 @@ export default async function Home() {
           </div>
           <div className="space-y-12">
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {articles.map((article: any) => (
+              {articles?.map((article: any) => (
                 <article
                   key={article.sys.id}
                   className="h-full flex flex-col rounded-lg shadow-lg overflow-hidden"

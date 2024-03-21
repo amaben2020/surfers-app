@@ -10,8 +10,6 @@ async function fetchGraphQL(query: any, preview = false) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // Switch the Bearer token depending on whether the fetch is supposed to retrieve live
-        // Contentful content or draft content
         Authorization: `Bearer ${
           preview
             ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
@@ -19,8 +17,7 @@ async function fetchGraphQL(query: any, preview = false) {
         }`,
       },
       body: JSON.stringify({ query }),
-      // Associate all fetches for articles with an "articles" cache tag so content can
-      // be revalidated or updated from Contentful on publish
+      // Associate all fetches for articles with an "articles" cache tag so content can be revalidated or updated from Contentful on publish
       next: { tags: ["articles"] },
     },
   ).then((response) => response.json());
@@ -30,13 +27,7 @@ function extractArticleEntries(fetchResponse: any) {
   return fetchResponse?.data?.knowledgeArticleCollection?.items;
 }
 
-export async function getAllArticles(
-  // For this demo set the default limit to always return 3 articles.
-  limit = 3,
-  // By default this function will return published content but will provide an option to
-  // return draft content for reviewing articles before they are live
-  isDraftMode = false,
-) {
+export async function getAllArticles(limit = 3, isDraftMode = false) {
   const articles = await fetchGraphQL(
     `query {
         knowledgeArticleCollection(where:{slug_exists: true}, order: date_DESC, limit: ${limit}, preview: ${
