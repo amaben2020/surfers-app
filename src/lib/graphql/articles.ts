@@ -7,17 +7,6 @@ slug
 summary
 details {
   json
-  links {
-    assets {
-      block {
-        sys {
-          id
-        }
-        url
-        description
-      }
-    }
-  }
 }
 date
 authorName
@@ -26,3 +15,15 @@ articleImage {
   url
 }
 `;
+
+// links {
+//   assets {
+//     block {
+//       sys {
+//         id
+//       }
+//       url
+//       description
+//     }
+//   }
+// }

@@ -1,6 +1,3 @@
-// Set a variable that contains all the fields needed for articles when a fetch for
-// content is performed
-
 import { ARTICLE_GRAPHQL_FIELDS } from "./graphql/articles";
 
 async function fetchGraphQL(query: any, preview = false) {
@@ -24,13 +21,13 @@ async function fetchGraphQL(query: any, preview = false) {
 }
 
 function extractArticleEntries(fetchResponse: any) {
-  return fetchResponse?.data?.knowledgeArticleCollection?.items;
+  return fetchResponse?.data?.knowledgeArticlesCollection?.items;
 }
 
 export async function getAllArticles(limit = 3, isDraftMode = false) {
   const articles = await fetchGraphQL(
     `query {
-        knowledgeArticleCollection(where:{slug_exists: true}, order: date_DESC, limit: ${limit}, preview: ${
+        knowledgeArticlesCollection(where:{slug_exists: true}, order: date_DESC, limit: ${limit}, preview: ${
       isDraftMode ? "true" : "false"
     }) {
           items {
@@ -46,7 +43,7 @@ export async function getAllArticles(limit = 3, isDraftMode = false) {
 export async function getArticle(slug: string, isDraftMode = false) {
   const article = await fetchGraphQL(
     `query {
-        knowledgeArticleCollection(where:{slug: "${slug}"}, limit: 1, preview: ${
+        knowledgeArticlesCollection(where:{slug: "${slug}"}, limit: 1, preview: ${
       isDraftMode ? "true" : "false"
     }) {
           items {
@@ -56,5 +53,6 @@ export async function getArticle(slug: string, isDraftMode = false) {
       }`,
     isDraftMode,
   );
+  console.log(article);
   return extractArticleEntries(article)[0];
 }
