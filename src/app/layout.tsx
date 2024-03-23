@@ -22,7 +22,7 @@ export default function RootLayout({
           <Link href="/" className="text-black">
             Home
           </Link>
-          <Link href="/blog" className="text-black">
+          <Link href="/blog-page" className="text-black">
             Blog
           </Link>
         </div>
