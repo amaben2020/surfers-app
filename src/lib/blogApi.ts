@@ -24,9 +24,9 @@ const fetchContentfulData = async (query: any, preview = false) => {
         }`,
       },
       body: JSON.stringify({ query }),
+      next: { tags: ["blogPage"] }, // could be passed dynamically to many pages
     });
 
-    console.log(response);
     return await response.json();
   } catch (error) {
     console.log(error);
@@ -47,7 +47,7 @@ export const getBlogPage = async (limit = 1, isDraftMode = false) => {
       }`,
       isDraftMode,
     );
-    console.log("DATA", data);
+
     return data.data?.blogPageCollection;
   } catch (error) {
     console.log(error);
