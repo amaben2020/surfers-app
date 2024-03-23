@@ -7,7 +7,7 @@ import Link from "next/link";
 export default async function Home() {
   const { isEnabled } = draftMode();
   const articles = await getAllArticles(3, isEnabled);
-  console.log(articles);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-white">
       <section className="w-full pt-12">
