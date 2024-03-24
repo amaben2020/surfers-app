@@ -1,9 +1,11 @@
 import { getBlogPage } from "@/lib/blogApi";
+import { draftMode } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 
 const BlogPage = async () => {
-  const { items } = await getBlogPage(1, false);
+  const { isEnabled } = draftMode();
+  const { items } = await getBlogPage(1, isEnabled);
   const landingPage = items[0];
   console.log(landingPage);
 
