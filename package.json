@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.19.6",
+    "graphql-tag": "^2.12.6",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18"

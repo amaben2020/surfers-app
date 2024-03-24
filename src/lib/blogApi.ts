@@ -54,23 +54,19 @@ export const getBlogPage = async (limit = 1, isDraftMode = false) => {
   }
 };
 
-// export const getBlogArticle = async (
-//   limit = 3,
-//   slug: string,
-//   isDraftMode = false,
-// ) => {
-//   try {
-//     const data = await fetchContentfulData(
-//       `query {
-//         knowledgeArticlesCollection(where:{slug: "${slug}"}, limit: 1, preview: ${
-//         isDraftMode ? "true" : "false"
-//       }) {
-//           items {
-//             ${ARTICLE_GRAPHQL_FIELDS}
-//           }
-//         }
-//       }`,
-//       isDraftMode,
-//     );
-//   } catch (error) {}
-// };
+export const getBlogArticle = async (slug: string, isDraftMode = false) => {
+  try {
+    const BLOG_ARTICLE_QUERY = `query GetBlogArticle  {
+      blogArticleCollection(where:{slug: "${slug}"}){
+        items{
+          title
+        }
+      }
+    }`;
+
+    const data = await fetchContentfulData(BLOG_ARTICLE_QUERY, isDraftMode);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};

@@ -12,14 +12,7 @@ const BlogPage = async () => {
       <p className="text-black"> {JSON.stringify(landingPage)}</p>
       <h2 className="text-black text-2xl">{landingPage.title}</h2>
 
-      <div className="mb-10 block">
-        {/* <Image
-          className="max-h-[200px]"
-          src={landingPage.hero.image.url}
-          alt="Image"
-          fill
-        /> */}
-      </div>
+      <div className="mb-10 block"></div>
 
       <div className="flex gap-6 mt-4">
         {landingPage.topPostsCollection.items?.map((item: any) => (
