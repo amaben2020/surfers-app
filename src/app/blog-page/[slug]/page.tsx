@@ -41,11 +41,10 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
 
   const blogPost = data?.blogArticleCollection?.items[0];
 
-  if (!blogPost) {
-    // If a blog post can't be found,
-    // tell Next.js to render a 404 page.
-    return notFound();
-  }
+  // if (!blogPost) {
+
+  //   return notFound();
+  // }
 
   return (
     <div>
