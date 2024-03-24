@@ -18,13 +18,15 @@ export async function GET(request: NextRequest) {
     return new Response("Invalid token", { status: 401 });
   }
 
-  const blogArticles = await getBlogArticle(slug, false);
+  const { data } = await getBlogArticle(slug, false);
 
-  if (!blogArticles) {
+  const blogPost = data?.blogArticleCollection?.items[0];
+
+  if (!blogPost) {
     return new Response("Article not found", { status: 404 });
   }
 
   draftMode().enable();
 
-  redirect(`/blog-article/${blogArticles.slug}`);
+  redirect(`/blog-article/${blogPost.slug}`);
 }

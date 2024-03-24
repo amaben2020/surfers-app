@@ -23,8 +23,9 @@ export async function generateMetadata({
 }): Promise<{
   title: string;
 }> {
-  const blogPost = await getBlogArticle(params.slug, false);
+  const { data } = await getBlogArticle(params.slug, false);
 
+  const blogPost = data?.blogArticleCollection?.items[0];
   if (!blogPost) {
     return notFound();
   }
@@ -37,6 +38,7 @@ export async function generateMetadata({
 const BlogPage = async ({ params }: { params: { slug: string } }) => {
   const { isEnabled } = draftMode();
   const { data } = await getBlogArticle(params.slug, isEnabled);
+
   const blogPost = data?.blogArticleCollection?.items[0];
 
   if (!blogPost) {

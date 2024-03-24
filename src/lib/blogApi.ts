@@ -60,6 +60,7 @@ export const getBlogArticle = async (slug: string, isDraftMode = false) => {
       blogArticleCollection(where:{slug: "${slug}"}){
         items{
           title
+          slug
           image{
             url
             fileName
