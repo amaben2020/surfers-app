@@ -1,15 +1,3 @@
-// export const BlogPostPageFragment = `
-//  #graphql
-//  fragment blogFields on BlogPost {
-//   title
-//   date
-//         author {
-//     name
-//     gitHubUsername
-//   }
-// }
-// `;
-
 export const BlogPostPageFragment = `
 title
 hero{

@@ -7,10 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "ctf:codegen": "contentful-typescript-codegen --output contentful/__generated__/types.ts"
+    "ctf:codegen": "contentful-typescript-codegen --output contentful/__generated__/types.ts",
+    "types:contentful": "export $(cat .env.local | awk '!/^\\s*#/' | awk '!/^\\s*$/'); cf-content-types-generator --spaceId $CONTENTFUL_SPACE_ID --token $CONTENTFUL_MANAGEMENT_TOKEN -o src/contentful/types -X && prettier --write src/contentful/types"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.19.6",
+    "cf-content-types-generator": "^2.15.0",
     "contentful-management": "^11.24.0",
     "contentful-typescript-codegen": "^3.4.0",
     "graphql-tag": "^2.12.6",

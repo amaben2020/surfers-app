@@ -24,7 +24,7 @@ const fetchContentfulData = async (query: any, preview = false) => {
         }`,
       },
       body: JSON.stringify({ query }),
-      next: { tags: ["blogPage"] }, // could be passed dynamically to many pages
+      next: { tags: ["blogPost"] }, // could be passed dynamically to many pages
     });
 
     return await response.json();
