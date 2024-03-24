@@ -20,6 +20,8 @@ export const POST = (request: NextRequest) => {
       },
     );
   }
+
+  //purges the cache for our components that are fetching Contentful article content.
   revalidateTag("blogPost");
   // return ok with date if ok
   NextResponse.json({
@@ -27,3 +29,7 @@ export const POST = (request: NextRequest) => {
     now: Date.now(),
   });
 };
+
+// https://surfers-app.vercel.app/api/blog-article/revalidate
+
+// https://surfers-app.vercel.app/api/revalidation
