@@ -34,6 +34,7 @@ cta{
 topPostsCollection(limit: 30){
  total
  items{
+  slug
   title
    image{
     url

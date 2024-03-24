@@ -1,14 +1,12 @@
 import { getBlogPage } from "@/lib/blogApi";
 import Image from "next/image";
+import Link from "next/link";
 
 const BlogPage = async () => {
   const { items } = await getBlogPage(1, false);
   const landingPage = items[0];
   console.log(landingPage);
-  console.log(
-    "landingPage.topPostsCollection.items",
-    landingPage.topPostsCollection.items,
-  );
+
   return (
     <div className="flex flex-col gap-y-10">
       <p className="text-black"> {JSON.stringify(landingPage)}</p>
@@ -25,10 +23,14 @@ const BlogPage = async () => {
 
       <div className="flex gap-6 mt-4">
         {landingPage.topPostsCollection.items?.map((item: any) => (
-          <div key={item.title} className="block">
+          <Link
+            href={`/blog-page/${item.slug}`}
+            key={item.title}
+            className="block cursor-pointer"
+          >
             <p className="text-black font-bold text-2xl">{item.title}</p>
             <Image src={item.image?.url} alt="Image" width={400} height={400} />
-          </div>
+          </Link>
         ))}
       </div>
     </div>
