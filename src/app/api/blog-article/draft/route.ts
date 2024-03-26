@@ -28,5 +28,5 @@ export async function GET(request: NextRequest) {
 
   draftMode().enable();
 
-  redirect(`/blog-article/${blogPost.slug}`);
+  redirect(`/blog-article/${blogPost?.slug}`);
 }
