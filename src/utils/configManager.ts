@@ -1,4 +1,4 @@
-const configureEnvironment = (environment: "staging" | "production") => {
+export const configureEnvironment = (environment: string) => {
   switch (environment) {
     case "staging":
       return {
@@ -18,8 +18,4 @@ const configureEnvironment = (environment: "staging" | "production") => {
         previewToken: process.env.CONTENTFUL_STAGING_PREVIEW_ACCESS_TOKEN!,
       };
   }
-};
-
-module.exports = {
-  configureEnvironment,
 };

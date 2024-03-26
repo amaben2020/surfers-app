@@ -1,5 +1,6 @@
 // GraphQL Content API
 
+import { configureEnvironment } from "@/utils/configManager";
 import { BlogPostPageFragment } from "./graphql/fragments/blogArticles";
 
 const BASE_URL = "https://graphql.contentful.com";
@@ -13,14 +14,14 @@ const configureContentfulUrl = (space: string) => {
 const fetchContentfulData = async (query: any, preview = false) => {
   try {
     const url = configureContentfulUrl(process.env.CONTENTFUL_SPACE_ID!);
+    const config = configureEnvironment(process.env.CONTENTFUL_ENVIRONMENT!);
+    console.log(config);
     const response = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${
-          preview
-            ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN!
-            : process.env.CONTENTFUL_ACCESS_TOKEN!
+          preview ? config.previewToken : config.accessToken
         }`,
       },
       body: JSON.stringify({ query }),
@@ -65,7 +66,6 @@ export const getBlogArticle = async (slug: string, isDraftMode = false) => {
           slug
           image{
             url
-           
             title
             description
           }
