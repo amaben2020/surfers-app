@@ -51,6 +51,7 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <div>
+      <p className="text-black text-2xl">STAGING LINK</p>
       <h2 className="text-black">{blogPost?.title}</h2>
       <div className="max-w-[800px] h-[500px] relative">
         {Array.isArray(blogPost?.cloudinaryImage) &&
