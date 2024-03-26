@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
     return new Response("Invalid token", { status: 401 });
   }
 
-  const { data } = await getBlogArticle(slug, false);
+  const { data } = await getBlogArticle(slug, true);
 
   const blogPost = data?.blogArticleCollection?.items[0];
 

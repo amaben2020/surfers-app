@@ -3,7 +3,6 @@ import { formatBlogArticlesSlug } from "@/lib/adapters/formatBlogArticlesSlug";
 import { getBlogArticle, getBlogPage } from "@/lib/blogApi";
 import { draftMode } from "next/headers";
 import Image from "next/image";
-import { notFound } from "next/navigation";
 
 interface BlogPostPageParams {
   slug: string;
@@ -27,12 +26,12 @@ export async function generateMetadata({
   const data = await getBlogArticle(params.slug, false);
 
   const blogPost = data?.data?.blogArticleCollection?.items[0];
-  if (!blogPost) {
-    return notFound();
-  }
+  // if (!blogPost) {
+  //   return notFound();
+  // }
 
   return {
-    title: blogPost.title,
+    title: blogPost?.title,
   };
 }
 
@@ -43,19 +42,19 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
 
   const blogPost = data?.blogArticleCollection?.items[0];
 
-  if (!blogPost) {
-    return notFound();
-  }
+  // if (!blogPost) {
+  //   return notFound();
+  // }
 
   console.log(blogPost);
 
   return (
     <div>
-      <h2 className="text-black">{blogPost.title}</h2>
+      <h2 className="text-black">{blogPost?.title}</h2>
       <div className="max-w-[800px] h-[500px] relative">
         <Image
           className="absolute top-0 left-0 w-full"
-          src={blogPost.image.url}
+          src={blogPost?.image?.url}
           alt=""
           fill
         />
@@ -63,7 +62,7 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
 
       <div>
         {" "}
-        <RichText document={blogPost.details.json} />{" "}
+        <RichText document={blogPost?.details?.json} />{" "}
       </div>
     </div>
   );

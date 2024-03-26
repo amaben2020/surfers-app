@@ -50,7 +50,7 @@ export async function GET(request: NextRequest) {
   // }
 
   //@ts-ignore
-  const { data } = await getBlogArticle(slug, false);
+  const { data } = await getBlogArticle(slug, true);
 
   console.log(data);
 
