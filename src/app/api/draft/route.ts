@@ -52,11 +52,8 @@ export async function GET(request: NextRequest) {
   //@ts-ignore
   const { data } = await getBlogArticle(slug, true);
 
-  console.log(data);
-
   const blogPost = data?.blogArticleCollection?.items[0];
 
-  console.log(blogPost?.slug);
   if (!blogPost) {
     return new Response("Article not found", { status: 404 });
   }
