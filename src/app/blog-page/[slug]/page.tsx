@@ -45,12 +45,13 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
   console.log(data);
 
   // if (!blogPost) {
-  //stging
+  //stging and devs
   //   return notFound();
   // }
 
   return (
     <div>
+      <p className="text-black text-2xl">STAGING LINK</p>
       <h2 className="text-black">{blogPost?.title}</h2>
       <div className="max-w-[800px] h-[500px] relative">
         {Array.isArray(blogPost?.cloudinaryImage) &&
