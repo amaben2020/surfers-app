@@ -46,18 +46,27 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
   //   return notFound();
   // }
 
-  console.log(blogPost);
+  console.log(blogPost?.asset_data);
 
   return (
     <div>
       <h2 className="text-black">{blogPost?.title}</h2>
       <div className="max-w-[800px] h-[500px] relative">
-        <Image
-          className="absolute top-0 left-0 w-full"
-          src={blogPost?.image?.url}
-          alt=""
-          fill
-        />
+        {blogPost?.asset_data.secure_url ? (
+          <Image
+            className="absolute top-0 left-0 w-full"
+            src={blogPost?.asset_data.secure_url}
+            alt=""
+            fill
+          />
+        ) : (
+          <Image
+            className="absolute top-0 left-0 w-full"
+            src={blogPost?.image?.url}
+            alt=""
+            fill
+          />
+        )}
       </div>
 
       <div>

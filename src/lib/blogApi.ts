@@ -67,6 +67,11 @@ export const getBlogArticle = async (slug: string, isDraftMode = false) => {
             title
             description
           }
+          asset_data {
+            id
+            publicId
+            secureUrl
+          }
           details{
             json
           }
