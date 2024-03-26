@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const BlogPage = async () => {
   const { isEnabled } = draftMode();
-  const { items } = await getBlogPage(1, isEnabled);
+  const { items } = await getBlogPage(10, isEnabled);
   const landingPage = items[0];
   console.log(landingPage);
 

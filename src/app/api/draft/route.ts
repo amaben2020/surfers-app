@@ -37,9 +37,6 @@ export async function GET(request: NextRequest) {
 
   const secret = searchParams.get("secret");
   const slug = searchParams.get("slug");
-  console.log(slug);
-
-  console.log(secret);
 
   // if (  !slug) {
   //   return new Response("Missing parameters", { status: 400 });
@@ -50,9 +47,9 @@ export async function GET(request: NextRequest) {
   // }
 
   //@ts-ignore
-  const { data } = await getBlogArticle(slug, true);
-
-  const blogPost = data?.blogArticleCollection?.items[0];
+  const data = await getBlogArticle(slug, true);
+  console.log(data);
+  const blogPost = data?.data?.blogArticleCollection?.items[0];
 
   if (!blogPost) {
     return new Response("Article not found", { status: 404 });

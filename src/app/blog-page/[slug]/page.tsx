@@ -37,25 +37,26 @@ export async function generateMetadata({
 
 const BlogPage = async ({ params }: { params: { slug: string } }) => {
   const { isEnabled } = draftMode();
-  console.log("isEnabled", isEnabled);
+
   const { data } = await getBlogArticle(params.slug, isEnabled);
 
   const blogPost = data?.blogArticleCollection?.items[0];
+
+  console.log(data);
 
   // if (!blogPost) {
   //   return notFound();
   // }
 
-  console.log(blogPost?.asset_data);
-
   return (
     <div>
       <h2 className="text-black">{blogPost?.title}</h2>
       <div className="max-w-[800px] h-[500px] relative">
-        {blogPost?.asset_data.secure_url ? (
+        {Array.isArray(blogPost?.cloudinaryImage) &&
+        blogPost?.cloudinaryImage[0]?.secure_url > 0 ? (
           <Image
             className="absolute top-0 left-0 w-full"
-            src={blogPost?.asset_data.secure_url}
+            src={blogPost.cloudinaryImage[0].secure_url}
             alt=""
             fill
           />

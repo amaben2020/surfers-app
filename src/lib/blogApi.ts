@@ -19,8 +19,8 @@ const fetchContentfulData = async (query: any, preview = false) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${
           preview
-            ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
-            : process.env.CONTENTFUL_ACCESS_TOKEN
+            ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN!
+            : process.env.CONTENTFUL_ACCESS_TOKEN!
         }`,
       },
       body: JSON.stringify({ query }),
@@ -57,21 +57,19 @@ export const getBlogPage = async (limit = 1, isDraftMode = false) => {
 export const getBlogArticle = async (slug: string, isDraftMode = false) => {
   try {
     const BLOG_ARTICLE_QUERY = `query GetBlogArticle  {
-      blogArticleCollection(where:{slug: "${slug}"}){
+      blogArticleCollection(where:{slug: "${slug}"}, preview: ${
+        isDraftMode ? "true" : "false"
+      }){
         items{
           title
           slug
           image{
             url
-            fileName
+           
             title
             description
           }
-          asset_data {
-            id
-            publicId
-            secureUrl
-          }
+          cloudinaryImage
           details{
             json
           }

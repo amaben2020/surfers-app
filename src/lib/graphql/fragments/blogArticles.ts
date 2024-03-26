@@ -27,6 +27,7 @@ topPostsCollection(limit: 30){
    image{
     url
   }
+  cloudinaryImage
      venue{
       lat
       lon
