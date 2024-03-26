@@ -67,6 +67,9 @@ export const getBlogArticle = async (slug: string, isDraftMode = false) => {
             title
             description
           }
+          details{
+            json
+          }
           venue{
             lat
             lon

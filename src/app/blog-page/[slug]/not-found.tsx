@@ -1,8 +1,9 @@
-
-const NotFoundBlogPost = () => {
+const NotFound = () => {
   return (
-    <div>NotFoundBlogPost</div>
-  )
-}
+    <div>
+      <p className="text-black">NotFound </p>
+    </div>
+  );
+};
 
-export default NotFoundBlogPost
+export default NotFound;

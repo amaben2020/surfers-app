@@ -1,5 +1,7 @@
+import ExitDraftModeLink from "@/components/ExitDraftModeLink";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { draftMode } from "next/headers";
 import Link from "next/link";
 import "./globals.css";
 
@@ -15,9 +17,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { isEnabled } = draftMode();
+
   return (
     <html lang="en">
       <body className={inter.className}>
+        {isEnabled && (
+          <div className="bg-black w-full text-white p-4">
+            <p className="bg-orange-200 py-4 px-[6vw]">
+              Draft mode is on! <ExitDraftModeLink className="underline" />
+            </p>
+          </div>
+        )}
         <div className="flex gap-5">
           <Link href="/" className="text-black">
             Home

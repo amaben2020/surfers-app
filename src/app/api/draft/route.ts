@@ -35,9 +35,11 @@ import { NextRequest } from "next/server";
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
 
-  // const secret = searchParams.get("secret");
+  const secret = searchParams.get("secret");
   const slug = searchParams.get("slug");
   console.log(slug);
+
+  console.log(secret);
 
   // if (  !slug) {
   //   return new Response("Missing parameters", { status: 400 });
@@ -50,13 +52,16 @@ export async function GET(request: NextRequest) {
   //@ts-ignore
   const { data } = await getBlogArticle(slug, false);
 
+  console.log(data);
+
   const blogPost = data?.blogArticleCollection?.items[0];
 
+  console.log(blogPost?.slug);
   if (!blogPost) {
     return new Response("Article not found", { status: 404 });
   }
 
   draftMode().enable();
 
-  redirect(`/blog-article/${blogPost?.slug}`);
+  redirect(`/blog-page/${blogPost?.slug}`);
 }

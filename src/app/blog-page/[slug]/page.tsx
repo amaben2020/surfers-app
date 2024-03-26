@@ -1,3 +1,4 @@
+import RichText from "@/components/RichText";
 import { formatBlogArticlesSlug } from "@/lib/adapters/formatBlogArticlesSlug";
 import { getBlogArticle, getBlogPage } from "@/lib/blogApi";
 import { draftMode } from "next/headers";
@@ -23,9 +24,9 @@ export async function generateMetadata({
 }): Promise<{
   title: string;
 }> {
-  const { data } = await getBlogArticle(params.slug, false);
+  const data = await getBlogArticle(params.slug, false);
 
-  const blogPost = data?.blogArticleCollection?.items[0];
+  const blogPost = data?.data?.blogArticleCollection?.items[0];
   if (!blogPost) {
     return notFound();
   }
@@ -37,14 +38,16 @@ export async function generateMetadata({
 
 const BlogPage = async ({ params }: { params: { slug: string } }) => {
   const { isEnabled } = draftMode();
+  console.log("isEnabled", isEnabled);
   const { data } = await getBlogArticle(params.slug, isEnabled);
 
   const blogPost = data?.blogArticleCollection?.items[0];
 
-  // if (!blogPost) {
+  if (!blogPost) {
+    return notFound();
+  }
 
-  //   return notFound();
-  // }
+  console.log(blogPost);
 
   return (
     <div>
@@ -56,6 +59,11 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
           alt=""
           fill
         />
+      </div>
+
+      <div>
+        {" "}
+        <RichText document={blogPost.details.json} />{" "}
       </div>
     </div>
   );

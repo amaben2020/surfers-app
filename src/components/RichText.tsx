@@ -10,7 +10,7 @@ function RichText({ document }: RichTextProps) {
     return null;
   }
 
-  return <>{documentToReactComponents(document)}</>;
+  return <p className="text-black">{documentToReactComponents(document)}</p>;
 }
 
 export default RichText;
