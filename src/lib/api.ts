@@ -28,8 +28,8 @@ export async function getAllArticles(limit = 3, isDraftMode = false) {
   const articles = await fetchGraphQL(
     `query {
         knowledgeArticlesCollection(where:{slug_exists: true}, order: date_DESC, limit: ${limit}, preview: ${
-      isDraftMode ? "true" : "false"
-    }) {
+          isDraftMode ? "true" : "false"
+        }) {
           items {
             ${ARTICLE_GRAPHQL_FIELDS}
           }
@@ -44,8 +44,8 @@ export async function getArticle(slug: string, isDraftMode = false) {
   const article = await fetchGraphQL(
     `query {
         knowledgeArticlesCollection(where:{slug: "${slug}"}, limit: 1, preview: ${
-      isDraftMode ? "true" : "false"
-    }) {
+          isDraftMode ? "true" : "false"
+        }) {
           items {
             ${ARTICLE_GRAPHQL_FIELDS}
           }
@@ -53,6 +53,6 @@ export async function getArticle(slug: string, isDraftMode = false) {
       }`,
     isDraftMode,
   );
-  console.log(article);
+
   return extractArticleEntries(article)[0];
 }
