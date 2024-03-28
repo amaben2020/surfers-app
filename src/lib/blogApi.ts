@@ -15,6 +15,7 @@ const fetchContentfulData = async (query: any, preview = false) => {
   try {
     const url = configureContentfulUrl(process.env.CONTENTFUL_SPACE_ID!);
     const config = configureEnvironment(process.env.CONTENTFUL_ENVIRONMENT!);
+    console.log(process.env.CONTENTFUL_ENVIRONMENT);
     console.log(config);
     const response = await fetch(url, {
       method: "POST",

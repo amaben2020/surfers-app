@@ -5,19 +5,20 @@ import Link from "next/link";
 
 const BlogPage = async () => {
   const { isEnabled } = draftMode();
-  const { items } = await getBlogPage(10, isEnabled);
-  const landingPage = items[0];
+  const data = await getBlogPage(10, isEnabled);
+  const landingPage = data?.items[0];
+  console.log(data);
   console.log(landingPage);
 
   return (
     <div className="flex flex-col gap-y-10">
       <p className="text-black"> {JSON.stringify(landingPage)}</p>
-      <h2 className="text-black text-2xl">{landingPage.title}</h2>
+      <h2 className="text-black text-2xl">{landingPage?.title}</h2>
 
       <div className="mb-10 block"></div>
 
       <div className="flex gap-6 mt-4">
-        {landingPage.topPostsCollection.items?.map((item: any) => (
+        {landingPage?.topPostsCollection.items?.map((item: any) => (
           <Link
             href={`/blog-page/${item.slug}`}
             key={item.title}

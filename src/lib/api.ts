@@ -1,6 +1,8 @@
+import { configureEnvironment } from "@/utils/configManager";
 import { ARTICLE_GRAPHQL_FIELDS } from "./graphql/articles";
 
 async function fetchGraphQL(query: any, preview = false) {
+  const config = configureEnvironment(process.env.CONTENTFUL_ENVIRONMENT!);
   return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
     {
@@ -8,9 +10,7 @@ async function fetchGraphQL(query: any, preview = false) {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${
-          preview
-            ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
-            : process.env.CONTENTFUL_ACCESS_TOKEN
+          preview ? config.previewToken : config.accessToken
         }`,
       },
       body: JSON.stringify({ query }),
