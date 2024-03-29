@@ -6,7 +6,7 @@ export const POST = async (request: NextRequest) => {
   try {
     const { name, address, email, price } = await request.json();
 
-    const newEntry = contentfulClient.entry.create(
+    const newEntry = await contentfulClient.entry.create(
       {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         environmentId: process.env.CONTENTFUL_ENVIRONMENT,
@@ -30,7 +30,10 @@ export const POST = async (request: NextRequest) => {
       },
     );
 
-    return NextResponse.json({ message: "Created successfully" });
+    return NextResponse.json({
+      message: "Created successfully",
+      data: newEntry,
+    });
   } catch (error) {
     return NextResponse.json({ message: "Something went wrong" });
   }
