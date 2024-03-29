@@ -1,0 +1,10 @@
+2024-03-29T07:34:37.559Z	INFO	CDA Throttle request to 30/s
+2024-03-29T07:34:37.560Z	INFO	CMA Throttle request to 7/s
+2024-03-29T07:34:37.642Z	INFO	Start fetchPartialEntitiesTask for contentTypes
+2024-03-29T07:34:42.277Z	INFO	Start fetchPartialEntitiesTask for contentTypes
+2024-03-29T07:34:44.117Z	INFO	Start computeIdsTask contentTypes
+2024-03-29T07:34:45.760Z	INFO	Start fetchPartialEntitiesTask for entries
+2024-03-29T07:34:47.967Z	INFO	Start fetchPartialEntitiesTask for entries
+2024-03-29T07:34:52.822Z	INFO	Start computeIdsTask entries
+2024-03-29T07:34:59.563Z	INFO	Start affectedContentTypesDivergedTask
+2024-03-29T07:34:59.579Z	INFO	Start fetchAddedEntitiesTask

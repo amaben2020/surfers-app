@@ -1,10 +1,13 @@
 import { configureEnvironment } from "@/utils/configManager";
 import { ARTICLE_GRAPHQL_FIELDS } from "./graphql/articles";
 
+// extend this function to accept tags text for next js
 async function fetchGraphQL(query: any, preview = false) {
   const config = configureEnvironment(process.env.CONTENTFUL_ENVIRONMENT!);
+
+  // fetching based on environments
   return fetch(
-    `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
+    `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT!}`,
     {
       method: "POST",
       headers: {
