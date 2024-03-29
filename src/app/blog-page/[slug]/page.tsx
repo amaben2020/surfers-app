@@ -12,7 +12,7 @@ interface BlogPostPageParams {
 export async function generateStaticParams() {
   const posts = await getBlogPage();
   console.log(posts);
-  return formatBlogArticlesSlug(posts) ?? [{ params: { slug: "" } }];
+  return formatBlogArticlesSlug(posts) ?? [{ slug: "" }];
 }
 
 // For each blog post, tell Next.js which metadata
