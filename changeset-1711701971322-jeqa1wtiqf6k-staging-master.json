@@ -1,0 +1,198 @@
+{
+  "sys": {
+    "type": "Changeset",
+    "createdAt": "1711701955605",
+    "space": {
+      "sys": {
+        "id": "jeqa1wtiqf6k",
+        "linkType": "Space",
+        "type": "Link"
+      }
+    },
+    "source": {
+      "sys": {
+        "id": "staging",
+        "linkType": "Environment",
+        "type": "Link"
+      }
+    },
+    "target": {
+      "sys": {
+        "id": "master",
+        "linkType": "Environment",
+        "type": "Link"
+      }
+    }
+  },
+  "items": [
+    {
+      "changeType": "update",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "5hpztPwx5wuLjf8q7XPWxR"
+        }
+      },
+      "patch": [
+        {
+          "op": "replace",
+          "path": "/fields/title/en-US",
+          "value": "A new dawn"
+        },
+        {
+          "op": "replace",
+          "path": "/fields/slug/en-US",
+          "value": "a-new-dawn"
+        },
+        {
+          "op": "replace",
+          "path": "/fields/details/en-US/content/0/content/1/value",
+          "value": "a new dawn"
+        }
+      ]
+    },
+    {
+      "changeType": "add",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "1uLhVjzKiFgef04xwi513z"
+        }
+      },
+      "data": {
+        "sys": {
+          "id": "1uLhVjzKiFgef04xwi513z",
+          "type": "Entry",
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "knowledgeArticles"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "Testing staging"
+          },
+          "slug": {
+            "en-US": "testing-staging"
+          },
+          "details": {
+            "en-US": {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": ".m ,f.fml;d;lfdfd",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                }
+              ],
+              "nodeType": "document"
+            }
+          }
+        }
+      }
+    },
+    {
+      "changeType": "add",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "3o26nyGw4wZqR3004ob0s0"
+        }
+      },
+      "data": {
+        "sys": {
+          "id": "3o26nyGw4wZqR3004ob0s0",
+          "type": "Entry",
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "blogArticle"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "Seterus paribus"
+          },
+          "slug": {
+            "en-US": "seterus-paribus"
+          },
+          "image": {
+            "en-US": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Asset",
+                "id": "4EfCErOoqHuHwA4DTo2mYt"
+              }
+            }
+          },
+          "details": {
+            "en-US": {
+              "nodeType": "document",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "paragraph",
+                  "data": {},
+                  "content": [
+                    {
+                      "nodeType": "text",
+                      "value": "Seteris paribus",
+                      "marks": [],
+                      "data": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "changeType": "add",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "3jbiFqdJqG8VkPgquzKZPD"
+        }
+      },
+      "data": {
+        "sys": {
+          "id": "3jbiFqdJqG8VkPgquzKZPD",
+          "type": "Entry",
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "blogArticle"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "the invincible"
+          },
+          "slug": {
+            "en-US": "the-invincible"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,16 +1,19 @@
+import { configureEnvironment } from "@/utils/configManager";
 import { ARTICLE_GRAPHQL_FIELDS } from "./graphql/articles";
 
+// extend this function to accept tags text for next js
 async function fetchGraphQL(query: any, preview = false) {
+  const config = configureEnvironment(process.env.CONTENTFUL_ENVIRONMENT!);
+
+  // fetching based on environments
   return fetch(
-    `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
+    `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT!}`,
     {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${
-          preview
-            ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
-            : process.env.CONTENTFUL_ACCESS_TOKEN
+          preview ? config.previewToken : config.accessToken
         }`,
       },
       body: JSON.stringify({ query }),
@@ -21,7 +24,10 @@ async function fetchGraphQL(query: any, preview = false) {
 }
 
 function extractArticleEntries(fetchResponse: any) {
-  return fetchResponse?.data?.knowledgeArticlesCollection?.items;
+  return (
+    Array.isArray(fetchResponse?.data?.knowledgeArticlesCollection?.items) &&
+    fetchResponse?.data?.knowledgeArticlesCollection?.items
+  );
 }
 
 export async function getAllArticles(limit = 3, isDraftMode = false) {
