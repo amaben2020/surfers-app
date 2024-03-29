@@ -24,7 +24,10 @@ async function fetchGraphQL(query: any, preview = false) {
 }
 
 function extractArticleEntries(fetchResponse: any) {
-  return fetchResponse?.data?.knowledgeArticlesCollection?.items;
+  return (
+    Array.isArray(fetchResponse?.data?.knowledgeArticlesCollection?.items) &&
+    fetchResponse?.data?.knowledgeArticlesCollection?.items
+  );
 }
 
 export async function getAllArticles(limit = 3, isDraftMode = false) {

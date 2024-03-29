@@ -8,6 +8,12 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   // grabbing all the article slugs and cache during build time
   const allArticles = await getAllArticles();
 
+  console.log(allArticles);
+
+  if (!Array.isArray(allArticles)) {
+    return [{ slug: "" }];
+  }
+
   return allArticles.map((article: any) => ({
     slug: article.slug,
   }));
