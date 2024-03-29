@@ -1,5 +1,5 @@
 //@ts-nocheck
-import { getArticle } from "@/lib/api";
+import { getAllArticles, getArticle } from "@/lib/api";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { draftMode } from "next/headers";
 import Image from "next/image";
