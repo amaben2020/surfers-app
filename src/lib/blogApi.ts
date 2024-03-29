@@ -4,19 +4,19 @@ import { configureEnvironment } from "@/utils/configManager";
 import { BlogPostPageFragment } from "./graphql/fragments/blogArticles";
 
 const BASE_URL = "https://graphql.contentful.com";
+// make 1 reusable fetch for all instances
 const configureContentfulUrl = (space: string) => {
   if (!space || typeof space !== "string") {
     throw Error("Space and Environments must be provided");
   }
-  return `${BASE_URL}/content/v1/spaces/${space}`;
+  return `${BASE_URL}/content/v1/spaces/${space}/environments/${process.env.CONTENTFUL_ENVIRONMENT!}`;
 };
 
 const fetchContentfulData = async (query: any, preview = false) => {
   try {
     const url = configureContentfulUrl(process.env.CONTENTFUL_SPACE_ID!);
     const config = configureEnvironment(process.env.CONTENTFUL_ENVIRONMENT!);
-    console.log(process.env.CONTENTFUL_ENVIRONMENT);
-    console.log(config);
+
     const response = await fetch(url, {
       method: "POST",
       headers: {

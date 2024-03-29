@@ -18,16 +18,25 @@ const BlogPage = async () => {
       <div className="mb-10 block"></div>
 
       <div className="flex gap-6 mt-4">
-        {landingPage?.topPostsCollection.items?.map((item: any) => (
-          <Link
-            href={`/blog-page/${item.slug}`}
-            key={item.title}
-            className="block cursor-pointer"
-          >
-            <p className="text-black font-bold text-2xl">{item.title}</p>
-            <Image src={item.image?.url} alt="Image" width={400} height={400} />
-          </Link>
-        ))}
+        {landingPage?.topPostsCollection.items?.map((item: any) => {
+          console.log(item);
+
+          return (
+            <Link
+              href={`/blog-page/${item.slug}`}
+              key={item.title}
+              className="block cursor-pointer"
+            >
+              <p className="text-black font-bold text-2xl">{item.title}</p>
+              <Image
+                src={item.image?.url}
+                alt="Image"
+                width={400}
+                height={400}
+              />
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
