@@ -9,13 +9,16 @@ const configureContentfulUrl = (space: string) => {
   if (!space || typeof space !== "string") {
     throw Error("Space and Environments must be provided");
   }
-  return `${BASE_URL}/content/v1/spaces/${space}/environments/${process.env.CONTENTFUL_ENVIRONMENT!}`;
+  // return `${BASE_URL}/content/v1/spaces/${space}/environments/${process.env.CONTENTFUL_ENVIRONMENT!}`;
+  return `${BASE_URL}/content/v1/spaces/${space}/environments/staging`;
 };
 
 const fetchContentfulData = async (query: any, preview = false) => {
   try {
-    const url = configureContentfulUrl(process.env.CONTENTFUL_SPACE_ID!);
-    const config = configureEnvironment(process.env.CONTENTFUL_ENVIRONMENT!);
+    // const url = configureContentfulUrl(process.env.CONTENTFUL_SPACE_ID!);
+    // const config = configureEnvironment(process.env.CONTENTFUL_ENVIRONMENT!);
+    const url = configureContentfulUrl("jeqa1wtiqf6k");
+    const config = configureEnvironment("staging");
 
     const response = await fetch(url, {
       method: "POST",
