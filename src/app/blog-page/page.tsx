@@ -1,5 +1,3 @@
-//@ts-nocheck
-
 import { getBlogPage } from "@/lib/blogApi";
 import { draftMode } from "next/headers";
 import Image from "next/image";

@@ -7,9 +7,11 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   // grabbing all the article slugs and cache during build time
   const allArticles = await getAllArticles();
 
-  return allArticles.map((article: any) => ({
-    slug: article.slug,
-  }));
+  return Array.isArray(allArticles)
+    ? allArticles.map((article: any) => ({
+        slug: article.slug,
+      }))
+    : [{ slug: "" }];
 }
 
 const KnowledgeArticle = async ({ params }: { params: { slug: string } }) => {

@@ -72,7 +72,6 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
       </div>
 
       <div>
-        {" "}
         <RichText document={blogPost?.details?.json} />{" "}
       </div>
     </div>
