@@ -1,9 +1,9 @@
-//@ts-nocheck
 import RichText from "@/components/RichText";
 import { formatBlogArticlesSlug } from "@/lib/adapters/formatBlogArticlesSlug";
 import { getBlogArticle, getBlogPage } from "@/lib/blogApi";
 import { draftMode } from "next/headers";
 import Image from "next/image";
+import NotFound from "./not-found";
 
 interface BlogPostPageParams {
   slug: string;
@@ -27,10 +27,6 @@ export async function generateMetadata({
   const data = await getBlogArticle(params.slug, false);
 
   const blogPost = data?.data?.blogArticleCollection?.items[0];
-  console.log(blogPost.title);
-  // if (!blogPost) {
-  //   return NotFound();
-  // }
 
   return {
     title: blogPost.title || "",
@@ -48,10 +44,9 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
 
   console.log(blogPost);
 
-  // if (!blogPost) {
-  //stging and devs
-  //   return notFound();
-  // }
+  if (!blogPost) {
+    return NotFound();
+  }
 
   return (
     <div>
