@@ -15,6 +15,7 @@
     "cf-content-types-generator": "^2.15.0",
     "contentful-management": "^11.24.3",
     "contentful-typescript-codegen": "^3.4.0",
+    "graphql-request": "^6.1.0",
     "graphql-tag": "^2.12.6",
     "next": "14.1.4",
     "react": "^18",
