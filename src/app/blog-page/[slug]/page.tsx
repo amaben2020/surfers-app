@@ -10,7 +10,7 @@ interface BlogPostPageParams {
 
 export async function generateStaticParams() {
   const posts = await getBlogPage();
-
+  console.log(posts);
   return formatBlogArticlesSlug(posts);
 }
 
@@ -26,12 +26,13 @@ export async function generateMetadata({
   const data = await getBlogArticle(params.slug, false);
 
   const blogPost = data?.data?.blogArticleCollection?.items[0];
+  console.log(blogPost.title);
   // if (!blogPost) {
-  //   return notFound();
+  //   return NotFound();
   // }
 
   return {
-    title: blogPost?.title,
+    title: blogPost.title || "",
   };
 }
 
@@ -43,6 +44,8 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
   const blogPost = data?.blogArticleCollection?.items[0];
 
   console.log(data);
+
+  console.log(blogPost);
 
   // if (!blogPost) {
   //stging and devs
