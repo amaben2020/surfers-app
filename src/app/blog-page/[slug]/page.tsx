@@ -3,6 +3,7 @@ import { formatBlogArticlesSlug } from "@/lib/adapters/formatBlogArticlesSlug";
 import { getBlogArticle, getBlogPage } from "@/lib/blogApi";
 import { draftMode } from "next/headers";
 import Image from "next/image";
+import NotFound from "./not-found";
 
 interface BlogPostPageParams {
   slug: string;
@@ -10,30 +11,27 @@ interface BlogPostPageParams {
 
 export async function generateStaticParams() {
   const posts = await getBlogPage();
-
-  return formatBlogArticlesSlug(posts);
+  console.log(posts);
+  return formatBlogArticlesSlug(posts) ?? [{ slug: "" }];
 }
 
 // For each blog post, tell Next.js which metadata
 // (e.g. page title) to display.
-export async function generateMetadata({
-  params,
-}: {
-  params: BlogPostPageParams;
-}): Promise<{
-  title: string;
-}> {
-  const data = await getBlogArticle(params.slug, false);
+// export async function generateMetadata({
+//   params,
+// }: {
+//   params: BlogPostPageParams;
+// }): Promise<{
+//   title: string;
+// }> {
+//   const data = await getBlogArticle(params.slug, false);
 
-  const blogPost = data?.data?.blogArticleCollection?.items[0];
-  // if (!blogPost) {
-  //   return notFound();
-  // }
+//   const blogPost = data?.data?.blogArticleCollection?.items[0];
 
-  return {
-    title: blogPost?.title,
-  };
-}
+//   return {
+//     title: blogPost.title || "",
+//   };
+// }
 
 const BlogPage = async ({ params }: { params: { slug: string } }) => {
   const { isEnabled } = draftMode();
@@ -44,10 +42,11 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
 
   console.log(data);
 
-  // if (!blogPost) {
-  //stging and devs
-  //   return notFound();
-  // }
+  console.log(blogPost);
+
+  if (!blogPost) {
+    return NotFound();
+  }
 
   return (
     <div>
@@ -73,7 +72,6 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
       </div>
 
       <div>
-        {" "}
         <RichText document={blogPost?.details?.json} />{" "}
       </div>
     </div>
