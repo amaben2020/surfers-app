@@ -1,58 +1,58 @@
-import RichText from "@/components/RichText";
-import { formatBlogArticlesSlug } from "@/lib/adapters/formatBlogArticlesSlug";
-import { getBlogArticle, getBlogPage } from "@/lib/blogApi";
-import { draftMode } from "next/headers";
-import Image from "next/image";
-import NotFound from "./not-found";
+// import RichText from "@/components/RichText";
+// import { formatBlogArticlesSlug } from "@/lib/adapters/formatBlogArticlesSlug";
+// import { getBlogArticle, getBlogPage } from "@/lib/blogApi";
+// import { draftMode } from "next/headers";
+// import Image from "next/image";
+// import NotFound from "./not-found";
 
 interface BlogPostPageParams {
   slug: string;
 }
 
-export async function generateStaticParams() {
-  const posts = await getBlogPage();
-  console.log(posts);
-  return formatBlogArticlesSlug(posts) ?? [{ slug: "" }];
-}
+// export async function generateStaticParams() {
+//   const posts = await getBlogPage();
+
+//   return formatBlogArticlesSlug(posts) ?? [{ slug: "" }];
+// }
 
 // For each blog post, tell Next.js which metadata
 // (e.g. page title) to display.
-export async function generateMetadata({
-  params,
-}: {
-  params: BlogPostPageParams;
-}): Promise<{
-  title: string;
-}> {
-  const data = await getBlogArticle(params.slug, false);
+// export async function generateMetadata({
+//   params,
+// }: {
+//   params: BlogPostPageParams;
+// }): Promise<{
+//   title: string;
+// }> {
+//   const data = await getBlogArticle(params.slug, false);
 
-  const blogPost = data?.data?.blogArticleCollection?.items[0];
+//   const blogPost = data?.data?.blogArticleCollection?.items[0];
 
-  return {
-    title: blogPost.title || "",
-  };
-}
+//   return {
+//     title: blogPost.title || "",
+//   };
+// }
 
 const BlogPage = async ({ params }: { params: { slug: string } }) => {
-  const { isEnabled } = draftMode();
+  // const { isEnabled } = draftMode();
 
-  const { data } = await getBlogArticle(params.slug, isEnabled);
+  // const { data } = await getBlogArticle(params.slug, isEnabled);
 
-  const blogPost = data?.blogArticleCollection?.items[0];
+  // const blogPost = data?.blogArticleCollection?.items[0];
 
-  console.log(data);
+  // console.log(data);
 
-  console.log(blogPost);
+  // console.log(blogPost);
 
-  if (!blogPost) {
-    return NotFound();
-  }
+  // if (!blogPost) {
+  //   return NotFound();
+  // }
 
   return (
     <div>
       <p className="text-black text-2xl">STAGING LINK</p>
-      <h2 className="text-black">{blogPost?.title}</h2>
-      <div className="max-w-[800px] h-[500px] relative">
+      {/* <h2 className="text-black">{blogPost?.title}</h2> */}
+      {/* <div className="max-w-[800px] h-[500px] relative">
         {Array.isArray(blogPost?.cloudinaryImage) &&
         blogPost?.cloudinaryImage[0]?.secure_url > 0 ? (
           <Image
@@ -73,7 +73,7 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
 
       <div>
         <RichText document={blogPost?.details?.json} />{" "}
-      </div>
+      </div> */}
     </div>
   );
 };
