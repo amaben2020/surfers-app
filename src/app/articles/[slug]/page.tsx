@@ -1,21 +1,20 @@
-//@ts-nocheck
 import { getAllArticles, getArticle } from "@/lib/api";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { draftMode } from "next/headers";
 import Image from "next/image";
 
-// export async function generateStaticParams(): Promise<{ slug: string }[]> {
-//   // grabbing all the article slugs and cache during build time
-//   const allArticles = await getAllArticles();
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
+  // grabbing all the article slugs and cache during build time
+  const allArticles = await getAllArticles();
 
-//   return allArticles.map((article: any) => ({
-//     slug: article.slug,
-//   }));
-// }
+  return allArticles.map((article: any) => ({
+    slug: article.slug,
+  }));
+}
 
 const KnowledgeArticle = async ({ params }: { params: { slug: string } }) => {
   const { isEnabled } = draftMode();
-  const article = await getArticle(params?.slug, isEnabled);
+  const article = await getArticle(params.slug, isEnabled);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-white">
