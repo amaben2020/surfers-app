@@ -12,26 +12,26 @@ interface BlogPostPageParams {
 export async function generateStaticParams() {
   const posts = await getBlogPage();
   console.log(posts);
-  return formatBlogArticlesSlug(posts) ?? [{ slug: "" }];
+  return formatBlogArticlesSlug(posts) ?? [{ params: { slug: "" } }];
 }
 
 // For each blog post, tell Next.js which metadata
 // (e.g. page title) to display.
-export async function generateMetadata({
-  params,
-}: {
-  params: BlogPostPageParams;
-}): Promise<{
-  title: string;
-}> {
-  const data = await getBlogArticle(params.slug, false);
+// export async function generateMetadata({
+//   params,
+// }: {
+//   params: BlogPostPageParams;
+// }): Promise<{
+//   title: string;
+// }> {
+//   const data = await getBlogArticle(params.slug, false);
 
-  const blogPost = data?.data?.blogArticleCollection?.items[0];
+//   const blogPost = data?.data?.blogArticleCollection?.items[0];
 
-  return {
-    title: blogPost.title || "",
-  };
-}
+//   return {
+//     title: blogPost.title || "",
+//   };
+// }
 
 const BlogPage = async ({ params }: { params: { slug: string } }) => {
   const { isEnabled } = draftMode();

@@ -3,15 +3,20 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { draftMode } from "next/headers";
 import Image from "next/image";
 
-export async function generateStaticParams(): Promise<{ slug: string }[]> {
+export async function generateStaticParams(): Promise<
+  { params: { slug: string } }[]
+> {
   // grabbing all the article slugs and cache during build time
   const allArticles = await getAllArticles();
-
+  // add "404" as default
+  // const paths = posts.map(({ slug }) => ({ params: { slug: slug || "404" } }));
   return Array.isArray(allArticles)
     ? allArticles.map((article: any) => ({
-        slug: article.slug,
+        params: {
+          slug: article.slug || "404",
+        },
       }))
-    : [{ slug: "" }];
+    : [{ params: { slug: "" } }];
 }
 
 const KnowledgeArticle = async ({ params }: { params: { slug: string } }) => {
