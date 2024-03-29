@@ -9,6 +9,8 @@ export default async function Home() {
 
   const articles = await getAllArticles(4, isEnabled);
 
+  console.log(articles);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-white">
       <section className="w-full pt-12">

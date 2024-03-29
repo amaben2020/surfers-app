@@ -23,13 +23,13 @@ const BlogPage = async () => {
 
           return (
             <Link
-              href={`/blog-page/${item.slug}`}
-              key={item.title}
+              href={`/blog-page/${item?.slug}`}
+              key={item?.title}
               className="block cursor-pointer"
             >
               <p className="text-black font-bold text-2xl">{item.title}</p>
               <Image
-                src={item.image?.url}
+                src={item?.image?.url}
                 alt="Image"
                 width={400}
                 height={400}
