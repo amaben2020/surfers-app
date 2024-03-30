@@ -1,6 +1,7 @@
 // GraphQL Content API
 
 import { configureEnvironment } from "@/utils/configManager";
+// import { createContentfulGraphqlClient } from "./config/gql-contentful";
 import { BlogPostPageFragment } from "./graphql/fragments/blogArticles";
 
 const BASE_URL = "https://graphql.contentful.com";
