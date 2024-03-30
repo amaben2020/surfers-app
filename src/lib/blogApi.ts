@@ -88,3 +88,56 @@ export const getBlogArticle = async (slug: string, isDraftMode = false) => {
     console.log(error);
   }
 };
+
+export const getBlogArticleCategory = async (
+  slug: string,
+  isDraftMode = false,
+) => {
+  try {
+    const BLOG_ARTICLE_QUERY = `{
+   
+      categoryCollection(where:{slug:"${slug}"}){
+        items{
+          title
+          slug
+          linkedFrom{
+            blogArticleCollection{
+              items{
+                title
+                slug
+                details{
+                  json  
+                  }
+                }
+              }
+            }
+          }
+        }
+      }`;
+
+    const data = await fetchContentfulData(BLOG_ARTICLE_QUERY, isDraftMode);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getBlogArticleCategories = async (isDraftMode = false) => {
+  try {
+    const BLOG_ARTICLE_QUERY = `
+    query{ 
+      categoryCollection{
+        items{
+          title
+          slug
+        }
+      }
+    }
+      `;
+
+    const data = await fetchContentfulData(BLOG_ARTICLE_QUERY, isDraftMode);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
