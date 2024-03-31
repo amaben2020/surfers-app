@@ -1,40 +1,5 @@
-// GraphQL Content API
-
-import { configureEnvironment } from "@/utils/configManager";
-// import { createContentfulGraphqlClient } from "./config/gql-contentful";
+import { fetchContentfulData } from "./graphql/config";
 import { BlogPostPageFragment } from "./graphql/fragments/blogArticles";
-
-const BASE_URL = "https://graphql.contentful.com";
-// make 1 reusable fetch for all instances
-const configureContentfulUrl = (space: string) => {
-  if (!space || typeof space !== "string") {
-    throw Error("Space and Environments must be provided");
-  }
-  return `${BASE_URL}/content/v1/spaces/${space}/environments/${process.env.CONTENTFUL_ENVIRONMENT!}`;
-};
-
-const fetchContentfulData = async (query: any, preview = false) => {
-  try {
-    const url = configureContentfulUrl(process.env.CONTENTFUL_SPACE_ID!);
-    const config = configureEnvironment(process.env.CONTENTFUL_ENVIRONMENT!);
-
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${
-          preview ? config.previewToken : config.accessToken
-        }`,
-      },
-      body: JSON.stringify({ query }),
-      next: { tags: ["blogPost"] }, // could be passed dynamically to many pages
-    });
-
-    return await response.json();
-  } catch (error) {
-    console.log(error);
-  }
-};
 
 export const getBlogPage = async (limit = 1, isDraftMode = false) => {
   try {
@@ -49,6 +14,7 @@ export const getBlogPage = async (limit = 1, isDraftMode = false) => {
         }
       }`,
       isDraftMode,
+      "blogPost",
     );
 
     return data.data?.blogPageCollection;
@@ -82,6 +48,59 @@ export const getBlogArticle = async (slug: string, isDraftMode = false) => {
         }
       }
     }`;
+
+    const data = await fetchContentfulData(BLOG_ARTICLE_QUERY, isDraftMode);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getBlogArticleCategory = async (
+  slug: string,
+  isDraftMode = false,
+) => {
+  try {
+    const BLOG_ARTICLE_QUERY = `{
+   
+      categoryCollection(where:{slug:"${slug}"}){
+        items{
+          title
+          slug
+          linkedFrom{
+            blogArticleCollection{
+              items{
+                title
+                slug
+                details{
+                  json  
+                  }
+                }
+              }
+            }
+          }
+        }
+      }`;
+
+    const data = await fetchContentfulData(BLOG_ARTICLE_QUERY, isDraftMode);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getBlogArticleCategories = async (isDraftMode = false) => {
+  try {
+    const BLOG_ARTICLE_QUERY = `
+    query{ 
+      categoryCollection{
+        items{
+          title
+          slug
+        }
+      }
+    }
+      `;
 
     const data = await fetchContentfulData(BLOG_ARTICLE_QUERY, isDraftMode);
     return data;
