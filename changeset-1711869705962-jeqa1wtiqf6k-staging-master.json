@@ -1,0 +1,1692 @@
+{
+  "sys": {
+    "type": "Changeset",
+    "createdAt": "1711869682058",
+    "space": {
+      "sys": {
+        "id": "jeqa1wtiqf6k",
+        "linkType": "Space",
+        "type": "Link"
+      }
+    },
+    "source": {
+      "sys": {
+        "id": "staging",
+        "linkType": "Environment",
+        "type": "Link"
+      }
+    },
+    "target": {
+      "sys": {
+        "id": "master",
+        "linkType": "Environment",
+        "type": "Link"
+      }
+    }
+  },
+  "items": [
+    {
+      "changeType": "update",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "2jpGI1eC0tn5gO1pHYcMpU"
+        }
+      },
+      "patch": [
+        {
+          "op": "remove",
+          "path": "/fields/topPosts/en-US/3"
+        },
+        {
+          "op": "replace",
+          "path": "/fields/topPosts/en-US/2/sys/id",
+          "value": "6AlzpnCzrtSiN6wueuj8Ge"
+        },
+        {
+          "op": "replace",
+          "path": "/fields/topPosts/en-US/1/sys/id",
+          "value": "7cU3uii0qCH9ombhQ1J53Q"
+        },
+        {
+          "op": "replace",
+          "path": "/fields/topPosts/en-US/0/sys/id",
+          "value": "T0oCa3we99hUaqwG0j2Il"
+        }
+      ]
+    },
+    {
+      "changeType": "update",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "5hpztPwx5wuLjf8q7XPWxR"
+        }
+      },
+      "patch": [
+        {
+          "op": "replace",
+          "path": "/fields/title/en-US",
+          "value": "A new dawn"
+        },
+        {
+          "op": "replace",
+          "path": "/fields/slug/en-US",
+          "value": "a-new-dawn"
+        },
+        {
+          "op": "replace",
+          "path": "/fields/details/en-US/content/0/content/1/value",
+          "value": "a new dawn"
+        }
+      ]
+    },
+    {
+      "changeType": "delete",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "6K73ufiKXDpXM1TOCZVC1T"
+        }
+      }
+    },
+    {
+      "changeType": "delete",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "24HLCeo4vMz8mEsVTdxJVk"
+        }
+      }
+    },
+    {
+      "changeType": "delete",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "2Bv46vWb3ttburwkv2odGv"
+        }
+      }
+    },
+    {
+      "changeType": "delete",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "5u8di2M1d0wdjDWPZku1h"
+        }
+      }
+    },
+    {
+      "changeType": "add",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "4xeXg877sfYG7CUHPuTJQ3"
+        }
+      },
+      "data": {
+        "sys": {
+          "id": "4xeXg877sfYG7CUHPuTJQ3",
+          "type": "Entry",
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "blogArticle"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "Gtx 4090"
+          },
+          "slug": {
+            "en-US": "gtx-4090"
+          },
+          "details": {
+            "en-US": {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "THIS IS THE STAGING ENVIRONMENT CF ",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-2"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Unleashing Gaming Power: A Deep Dive into the GTX 4090",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-2"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Introduction:\nThis update is solely for the staging branch",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Unparalleled Performance",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "At the heart of the GTX 1070 lies NVIDIA's Pascal architecture, a revolutionary leap in GPU technology. With 1920 CUDA cores and a base clock speed of 1506 MHz, the GTX 1070 delivers blistering performance across a myriad of gaming titles. Whether you're diving into the vast landscapes of open-world adventures or engaging in intense multiplayer battles, the GTX 1070 ensures smooth frame rates and stunning visuals, thanks to its 8GB of GDDR5 memory and 256-bit memory interface.",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {
+                    "target": {
+                      "sys": {
+                        "id": "7zdxRfxC7OF6WvS43uBEew",
+                        "type": "Link",
+                        "linkType": "Asset"
+                      }
+                    }
+                  },
+                  "content": [],
+                  "nodeType": "embedded-asset-block"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Future-Proof Design",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "One of the most enticing aspects of the GTX 1070 is its future-proof design. Equipped with cutting-edge features such as NVIDIA Ansel, VRWorks, and G-SYNC, the GTX 1070 not only elevates your current gaming experience but also prepares you for the next wave of immersive technologies. From capturing breathtaking in-game screenshots to seamlessly integrating with virtual reality headsets, the GTX 1070 opens doors to a new realm of possibilities, ensuring that your gaming rig remains relevant for years to come.",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Optimal Efficiency",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "In addition to its formidable performance, the GTX 1070 boasts remarkable efficiency, striking a delicate balance between power and consumption. With NVIDIA's advanced FinFET manufacturing process, the GTX 1070 achieves unprecedented levels of energy efficiency, allowing gamers to push boundaries without worrying about excessive heat or power consumption. Whether you're embarking on marathon gaming sessions or tackling demanding creative tasks, the GTX 1070 ensures a smooth and stable performance while keeping energy costs in check.",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Versatile Applications",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Beyond gaming, the GTX 1070 proves its versatility in various professional applications, including content creation, 3D rendering, and scientific simulations. With CUDA cores optimized for parallel processing, the GTX 1070 accelerates tasks such as video editing, rendering complex visual effects, and conducting simulations with remarkable speed and precision. Whether you're a content creator, a digital artist, or a researcher, the GTX 1070 serves as a reliable companion, empowering you to unleash your creativity without compromise.",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "First",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "paragraph"
+                            }
+                          ],
+                          "nodeType": "table-header-cell"
+                        },
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "Second",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "paragraph"
+                            }
+                          ],
+                          "nodeType": "table-header-cell"
+                        },
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "Third",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "paragraph"
+                            }
+                          ],
+                          "nodeType": "table-header-cell"
+                        }
+                      ],
+                      "nodeType": "table-row"
+                    },
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "It made sales",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "paragraph"
+                            }
+                          ],
+                          "nodeType": "table-cell"
+                        },
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "Yeah",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "paragraph"
+                            }
+                          ],
+                          "nodeType": "table-cell"
+                        },
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "Yup",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "paragraph"
+                            }
+                          ],
+                          "nodeType": "table-cell"
+                        }
+                      ],
+                      "nodeType": "table-row"
+                    }
+                  ],
+                  "nodeType": "table"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "code"
+                        }
+                      ],
+                      "value": "if (this.props){",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "code"
+                        }
+                      ],
+                      "value": "return true",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "code"
+                        }
+                      ],
+                      "value": "}",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Conclusion",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "In conclusion, the GTX 1070 stands tall as a beacon of performance, efficiency, and versatility in the realm of graphics cards. With its potent blend of cutting-edge technology and affordable pricing, the GTX 1070 continues to captivate gamers and professionals alike, delivering unparalleled experiences across a wide spectrum of applications. Whether you're diving into the latest gaming blockbuster or pushing the boundaries of creativity, the GTX 1070 remains a steadfast companion, ready to elevate your experience to new heights.",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                }
+              ],
+              "nodeType": "document"
+            }
+          },
+          "cloudinaryImage": {
+            "en-US": [
+              {
+                "url": "http://res.cloudinary.com/amaben/image/upload/f_auto/q_auto/v1711550088/2587321__81315.1614269212_fb4pel.jpg",
+                "tags": [],
+                "type": "upload",
+                "bytes": 524456,
+                "width": 1280,
+                "format": "jpg",
+                "height": 1280,
+                "version": 1711550088,
+                "duration": null,
+                "metadata": [],
+                "public_id": "2587321__81315.1614269212_fb4pel",
+                "created_at": "2024-03-27T14:34:48Z",
+                "secure_url": "https://res.cloudinary.com/amaben/image/upload/f_auto/q_auto/v1711550088/2587321__81315.1614269212_fb4pel.jpg",
+                "original_url": "http://res.cloudinary.com/amaben/image/upload/v1711550088/2587321__81315.1614269212_fb4pel.jpg",
+                "resource_type": "image",
+                "raw_transformation": "f_auto/q_auto",
+                "original_secure_url": "https://res.cloudinary.com/amaben/image/upload/v1711550088/2587321__81315.1614269212_fb4pel.jpg"
+              }
+            ]
+          },
+          "category": {
+            "en-US": [
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "3waDHk5nZZ05f1qXOgRdbP"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "changeType": "add",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "T0oCa3we99hUaqwG0j2Il"
+        }
+      },
+      "data": {
+        "sys": {
+          "id": "T0oCa3we99hUaqwG0j2Il",
+          "type": "Entry",
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "blogArticle"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "A day in life of a tech bro"
+          },
+          "slug": {
+            "en-US": "a-day-in-life-of-a-tech-bro"
+          },
+          "cloudinaryImage": {
+            "en-US": [
+              {
+                "url": "http://res.cloudinary.com/amaben/image/upload/f_auto/q_auto/v1708801420/avatar_lda7hu.png",
+                "tags": [],
+                "type": "upload",
+                "bytes": 897931,
+                "width": 2000,
+                "format": "png",
+                "height": 2000,
+                "version": 1708801420,
+                "duration": null,
+                "metadata": [],
+                "public_id": "avatar_lda7hu",
+                "created_at": "2024-02-24T19:03:40Z",
+                "secure_url": "https://res.cloudinary.com/amaben/image/upload/f_auto/q_auto/v1708801420/avatar_lda7hu.png",
+                "original_url": "http://res.cloudinary.com/amaben/image/upload/v1708801420/avatar_lda7hu.png",
+                "resource_type": "image",
+                "raw_transformation": "f_auto/q_auto",
+                "original_secure_url": "https://res.cloudinary.com/amaben/image/upload/v1708801420/avatar_lda7hu.png"
+              }
+            ]
+          },
+          "category": {
+            "en-US": [
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "6WArcYgHdSyC6T9hm3XUzu"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "changeType": "add",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "7cU3uii0qCH9ombhQ1J53Q"
+        }
+      },
+      "data": {
+        "sys": {
+          "id": "7cU3uii0qCH9ombhQ1J53Q",
+          "type": "Entry",
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "blogArticle"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "Good foundations"
+          },
+          "slug": {
+            "en-US": "good-foundations"
+          },
+          "image": {
+            "en-US": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Asset",
+                "id": "4EfCErOoqHuHwA4DTo2mYt"
+              }
+            }
+          },
+          "details": {
+            "en-US": {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "THIS IS THE STAGING ENVIRONMENT CF ",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-2"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Unleashing Gaming Power: A Deep Dive into the GTX 1070",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-2"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Introduction:\nThis update is solely for the staging branch",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Unparalleled Performance",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "At the heart of the GTX 1070 lies NVIDIA's Pascal architecture, a revolutionary leap in GPU technology. With 1920 CUDA cores and a base clock speed of 1506 MHz, the GTX 1070 delivers blistering performance across a myriad of gaming titles. Whether you're diving into the vast landscapes of open-world adventures or engaging in intense multiplayer battles, the GTX 1070 ensures smooth frame rates and stunning visuals, thanks to its 8GB of GDDR5 memory and 256-bit memory interface.",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Future-Proof Design",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "One of the most enticing aspects of the GTX 1070 is its future-proof design. Equipped with cutting-edge features such as NVIDIA Ansel, VRWorks, and G-SYNC, the GTX 1070 not only elevates your current gaming experience but also prepares you for the next wave of immersive technologies. From capturing breathtaking in-game screenshots to seamlessly integrating with virtual reality headsets, the GTX 1070 opens doors to a new realm of possibilities, ensuring that your gaming rig remains relevant for years to come.",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Optimal Efficiency",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "In addition to its formidable performance, the GTX 1070 boasts remarkable efficiency, striking a delicate balance between power and consumption. With NVIDIA's advanced FinFET manufacturing process, the GTX 1070 achieves unprecedented levels of energy efficiency, allowing gamers to push boundaries without worrying about excessive heat or power consumption. Whether you're embarking on marathon gaming sessions or tackling demanding creative tasks, the GTX 1070 ensures a smooth and stable performance while keeping energy costs in check.",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Versatile Applications",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Beyond gaming, the GTX 1070 proves its versatility in various professional applications, including content creation, 3D rendering, and scientific simulations. With CUDA cores optimized for parallel processing, the GTX 1070 accelerates tasks such as video editing, rendering complex visual effects, and conducting simulations with remarkable speed and precision. Whether you're a content creator, a digital artist, or a researcher, the GTX 1070 serves as a reliable companion, empowering you to unleash your creativity without compromise.",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "First",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "paragraph"
+                            }
+                          ],
+                          "nodeType": "table-header-cell"
+                        },
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "Second",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "paragraph"
+                            }
+                          ],
+                          "nodeType": "table-header-cell"
+                        },
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "Third",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "paragraph"
+                            }
+                          ],
+                          "nodeType": "table-header-cell"
+                        }
+                      ],
+                      "nodeType": "table-row"
+                    },
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "It made sales",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "paragraph"
+                            }
+                          ],
+                          "nodeType": "table-cell"
+                        },
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "Yeah",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "paragraph"
+                            }
+                          ],
+                          "nodeType": "table-cell"
+                        },
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "Yup",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "paragraph"
+                            }
+                          ],
+                          "nodeType": "table-cell"
+                        }
+                      ],
+                      "nodeType": "table-row"
+                    }
+                  ],
+                  "nodeType": "table"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "code"
+                        }
+                      ],
+                      "value": "if (this.props){",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "code"
+                        }
+                      ],
+                      "value": "return true",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "code"
+                        }
+                      ],
+                      "value": "}",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Conclusion",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "In conclusion, the GTX 1070 stands tall as a beacon of performance, efficiency, and versatility in the realm of graphics cards. With its potent blend of cutting-edge technology and affordable pricing, the GTX 1070 continues to captivate gamers and professionals alike, delivering unparalleled experiences across a wide spectrum of applications. Whether you're diving into the latest gaming blockbuster or pushing the boundaries of creativity, the GTX 1070 remains a steadfast companion, ready to elevate your experience to new heights.",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                }
+              ],
+              "nodeType": "document"
+            }
+          },
+          "category": {
+            "en-US": [
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "60Kt3kHdWZnIe1hmuebPOQ"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "6WArcYgHdSyC6T9hm3XUzu"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "changeType": "add",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "6AlzpnCzrtSiN6wueuj8Ge"
+        }
+      },
+      "data": {
+        "sys": {
+          "id": "6AlzpnCzrtSiN6wueuj8Ge",
+          "type": "Entry",
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "blogArticle"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "Gtx 1070"
+          },
+          "slug": {
+            "en-US": "gtx-1070"
+          },
+          "details": {
+            "en-US": {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "THIS IS THE STAGING ENVIRONMENT CF ",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-2"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Unleashing Gaming Power: A Deep Dive into the GTX 1070",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-2"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Introduction:\nThis update is solely for the staging branch",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Unparalleled Performance",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "At the heart of the GTX 1070 lies NVIDIA's Pascal architecture, a revolutionary leap in GPU technology. With 1920 CUDA cores and a base clock speed of 1506 MHz, the GTX 1070 delivers blistering performance across a myriad of gaming titles. Whether you're diving into the vast landscapes of open-world adventures or engaging in intense multiplayer battles, the GTX 1070 ensures smooth frame rates and stunning visuals, thanks to its 8GB of GDDR5 memory and 256-bit memory interface.",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {
+                    "target": {
+                      "sys": {
+                        "id": "7zdxRfxC7OF6WvS43uBEew",
+                        "type": "Link",
+                        "linkType": "Asset"
+                      }
+                    }
+                  },
+                  "content": [],
+                  "nodeType": "embedded-asset-block"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Future-Proof Design",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "One of the most enticing aspects of the GTX 1070 is its future-proof design. Equipped with cutting-edge features such as NVIDIA Ansel, VRWorks, and G-SYNC, the GTX 1070 not only elevates your current gaming experience but also prepares you for the next wave of immersive technologies. From capturing breathtaking in-game screenshots to seamlessly integrating with virtual reality headsets, the GTX 1070 opens doors to a new realm of possibilities, ensuring that your gaming rig remains relevant for years to come.",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Optimal Efficiency",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "In addition to its formidable performance, the GTX 1070 boasts remarkable efficiency, striking a delicate balance between power and consumption. With NVIDIA's advanced FinFET manufacturing process, the GTX 1070 achieves unprecedented levels of energy efficiency, allowing gamers to push boundaries without worrying about excessive heat or power consumption. Whether you're embarking on marathon gaming sessions or tackling demanding creative tasks, the GTX 1070 ensures a smooth and stable performance while keeping energy costs in check.",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Versatile Applications",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Beyond gaming, the GTX 1070 proves its versatility in various professional applications, including content creation, 3D rendering, and scientific simulations. With CUDA cores optimized for parallel processing, the GTX 1070 accelerates tasks such as video editing, rendering complex visual effects, and conducting simulations with remarkable speed and precision. Whether you're a content creator, a digital artist, or a researcher, the GTX 1070 serves as a reliable companion, empowering you to unleash your creativity without compromise.",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "First",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "paragraph"
+                            }
+                          ],
+                          "nodeType": "table-header-cell"
+                        },
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "Second",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "paragraph"
+                            }
+                          ],
+                          "nodeType": "table-header-cell"
+                        },
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "Third",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "paragraph"
+                            }
+                          ],
+                          "nodeType": "table-header-cell"
+                        }
+                      ],
+                      "nodeType": "table-row"
+                    },
+                    {
+                      "data": {},
+                      "content": [
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "It made sales",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "paragraph"
+                            }
+                          ],
+                          "nodeType": "table-cell"
+                        },
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "Yeah",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "paragraph"
+                            }
+                          ],
+                          "nodeType": "table-cell"
+                        },
+                        {
+                          "data": {},
+                          "content": [
+                            {
+                              "data": {},
+                              "content": [
+                                {
+                                  "data": {},
+                                  "marks": [],
+                                  "value": "Yup",
+                                  "nodeType": "text"
+                                }
+                              ],
+                              "nodeType": "paragraph"
+                            }
+                          ],
+                          "nodeType": "table-cell"
+                        }
+                      ],
+                      "nodeType": "table-row"
+                    }
+                  ],
+                  "nodeType": "table"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "code"
+                        }
+                      ],
+                      "value": "if (this.props){",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "code"
+                        }
+                      ],
+                      "value": "return true",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [
+                        {
+                          "type": "code"
+                        }
+                      ],
+                      "value": "}",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "Conclusion",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "heading-3"
+                },
+                {
+                  "data": {},
+                  "content": [
+                    {
+                      "data": {},
+                      "marks": [],
+                      "value": "In conclusion, the GTX 1070 stands tall as a beacon of performance, efficiency, and versatility in the realm of graphics cards. With its potent blend of cutting-edge technology and affordable pricing, the GTX 1070 continues to captivate gamers and professionals alike, delivering unparalleled experiences across a wide spectrum of applications. Whether you're diving into the latest gaming blockbuster or pushing the boundaries of creativity, the GTX 1070 remains a steadfast companion, ready to elevate your experience to new heights.",
+                      "nodeType": "text"
+                    }
+                  ],
+                  "nodeType": "paragraph"
+                }
+              ],
+              "nodeType": "document"
+            }
+          },
+          "cloudinaryImage": {
+            "en-US": [
+              {
+                "url": "http://res.cloudinary.com/amaben/image/upload/f_auto/q_auto/v1711550088/2587321__81315.1614269212_fb4pel.jpg",
+                "tags": [],
+                "type": "upload",
+                "bytes": 524456,
+                "width": 1280,
+                "format": "jpg",
+                "height": 1280,
+                "version": 1711550088,
+                "duration": null,
+                "metadata": [],
+                "public_id": "2587321__81315.1614269212_fb4pel",
+                "created_at": "2024-03-27T14:34:48Z",
+                "secure_url": "https://res.cloudinary.com/amaben/image/upload/f_auto/q_auto/v1711550088/2587321__81315.1614269212_fb4pel.jpg",
+                "resource_type": "image",
+                "original_url": "http://res.cloudinary.com/amaben/image/upload/v1711550088/2587321__81315.1614269212_fb4pel.jpg",
+                "original_secure_url": "https://res.cloudinary.com/amaben/image/upload/v1711550088/2587321__81315.1614269212_fb4pel.jpg",
+                "raw_transformation": "f_auto/q_auto"
+              }
+            ]
+          },
+          "category": {
+            "en-US": [
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "3waDHk5nZZ05f1qXOgRdbP"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "changeType": "add",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "3waDHk5nZZ05f1qXOgRdbP"
+        }
+      },
+      "data": {
+        "sys": {
+          "id": "3waDHk5nZZ05f1qXOgRdbP",
+          "type": "Entry",
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "category"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "graphics"
+          },
+          "slug": {
+            "en-US": "graphics"
+          }
+        }
+      }
+    },
+    {
+      "changeType": "add",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "60Kt3kHdWZnIe1hmuebPOQ"
+        }
+      },
+      "data": {
+        "sys": {
+          "id": "60Kt3kHdWZnIe1hmuebPOQ",
+          "type": "Entry",
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "category"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "lifestyle"
+          },
+          "slug": {
+            "en-US": "lifestyle"
+          }
+        }
+      }
+    },
+    {
+      "changeType": "add",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "6WArcYgHdSyC6T9hm3XUzu"
+        }
+      },
+      "data": {
+        "sys": {
+          "id": "6WArcYgHdSyC6T9hm3XUzu",
+          "type": "Entry",
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "category"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "tech"
+          },
+          "slug": {
+            "en-US": "tech"
+          }
+        }
+      }
+    },
+    {
+      "changeType": "add",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "49J9CVYtplPmGkwdjrJUKH"
+        }
+      },
+      "data": {
+        "sys": {
+          "id": "49J9CVYtplPmGkwdjrJUKH",
+          "type": "Entry",
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "tags"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "language"
+          },
+          "slug": {
+            "en-US": "language"
+          }
+        }
+      }
+    },
+    {
+      "changeType": "add",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "5oZzteiTX9AgztXjt9ks1K"
+        }
+      },
+      "data": {
+        "sys": {
+          "id": "5oZzteiTX9AgztXjt9ks1K",
+          "type": "Entry",
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "tags"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "gpu"
+          },
+          "slug": {
+            "en-US": "gpu"
+          }
+        }
+      }
+    },
+    {
+      "changeType": "add",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "2bih7Ek1b1T6dDgdIQymEX"
+        }
+      },
+      "data": {
+        "sys": {
+          "id": "2bih7Ek1b1T6dDgdIQymEX",
+          "type": "Entry",
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "tags"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "nvidia"
+          },
+          "slug": {
+            "en-US": "nvidia"
+          }
+        }
+      }
+    },
+    {
+      "changeType": "add",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "5IPfOsKNjcRnBj8wdabPeg"
+        }
+      },
+      "data": {
+        "sys": {
+          "id": "5IPfOsKNjcRnBj8wdabPeg",
+          "type": "Entry",
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "tags"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "cpu"
+          },
+          "slug": {
+            "en-US": "cpu"
+          }
+        }
+      }
+    },
+    {
+      "changeType": "add",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "5r3ITYKXkeHQYwCRuBGfS9"
+        }
+      },
+      "data": {
+        "sys": {
+          "id": "5r3ITYKXkeHQYwCRuBGfS9",
+          "type": "Entry",
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "tags"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "lifestyle"
+          },
+          "slug": {
+            "en-US": "lifestyle"
+          }
+        }
+      }
+    }
+  ]
+}
