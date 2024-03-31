@@ -1,39 +1,5 @@
-// GraphQL Content API
-
-import { configureEnvironment } from "@/utils/configManager";
+import { fetchContentfulData } from "./graphql/config";
 import { BlogPostPageFragment } from "./graphql/fragments/blogArticles";
-
-const BASE_URL = "https://graphql.contentful.com";
-// make 1 reusable fetch for all instances
-const configureContentfulUrl = (space: string) => {
-  if (!space || typeof space !== "string") {
-    throw Error("Space and Environments must be provided");
-  }
-  return `${BASE_URL}/content/v1/spaces/${space}/environments/${process.env.CONTENTFUL_ENVIRONMENT!}`;
-};
-
-const fetchContentfulData = async (query: any, preview = false) => {
-  try {
-    const url = configureContentfulUrl(process.env.CONTENTFUL_SPACE_ID!);
-    const config = configureEnvironment(process.env.CONTENTFUL_ENVIRONMENT!);
-
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${
-          preview ? config.previewToken : config.accessToken
-        }`,
-      },
-      body: JSON.stringify({ query }),
-      next: { tags: ["blogPost"] }, // could be passed dynamically to many pages
-    });
-
-    return await response.json();
-  } catch (error) {
-    console.log(error);
-  }
-};
 
 export const getBlogPage = async (limit = 1, isDraftMode = false) => {
   try {
@@ -48,6 +14,7 @@ export const getBlogPage = async (limit = 1, isDraftMode = false) => {
         }
       }`,
       isDraftMode,
+      "blogPost",
     );
 
     return data.data?.blogPageCollection;
