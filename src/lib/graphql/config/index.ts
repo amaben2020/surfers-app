@@ -2,7 +2,7 @@ import { configureEnvironment } from "@/utils/configManager";
 
 const BASE_URL = "https://graphql.contentful.com";
 // make 1 reusable fetch for all instances
-const configureContentfulUrl = (space: string) => {
+export const configureContentfulUrl = (space: string) => {
   if (!space || typeof space !== "string") {
     throw Error("Space and Environments must be provided");
   }

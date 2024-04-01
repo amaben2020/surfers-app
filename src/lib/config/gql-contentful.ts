@@ -1,43 +1,20 @@
-import { gql, GraphQLClient } from "graphql-request";
+import { GraphQLClient } from "graphql-request";
 
 export const createContentfulGraphqlClient = async (
   url: string,
-  query: string
+  query: string,
+  variables: Record<string, string | boolean | number>,
+  token: string
 ) => {
-  // const document = gql`
-  //   {
-  //     company {
-  //       ceo
-  //     }
-  //   }
-  // `;
+  try {
+    const client = new GraphQLClient(url, {
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
+    });
 
-  const client = new GraphQLClient(url, {
-    headers: {
-      authorization: "Bearer woe5rO8bj3-doSNi4ZdgIyU88XtkgjCF549wHeRIAuA",
-    },
-  });
-
-  return await client.request(gql`
-    ${query}
-  `);
+    return await client.request(query, variables);
+  } catch (error) {
+    console.log(error);
+  }
 };
-
-// export const getBlogPageGQL = async () => {
-//   const url = configureContentfulUrl(process.env.CONTENTFUL_SPACE_ID!);
-//   const config = configureEnvironment(process.env.CONTENTFUL_ENVIRONMENT!);
-//   let isDraftMode = true;
-//   let limit = 1;
-//   const data = await createContentfulGraphqlClient(
-//     url,
-//     `
-//     blogPageCollection {
-//       items {
-//         ${BlogPostPageFragment}
-//       }
-//     }
-//  `,
-//   );
-//   console.log("data", data);
-//   return data;
-// };

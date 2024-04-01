@@ -11,6 +11,8 @@ const BlogPage = async () => {
 
   const blogArticlecTags = await getBlogArticleCategories();
 
+  // const blogGqlRequestData = await getBlogPageGQL(false, 2);
+
   return (
     <div className="flex flex-col gap-y-10">
       <p className="text-black"> {JSON.stringify(landingPage)}</p>
