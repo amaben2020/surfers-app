@@ -2,7 +2,10 @@ import { configureEnvironment } from "@/utils/configManager";
 import { createContentfulGraphqlClient } from "./config/gql-contentful";
 import { configureContentfulUrl, fetchContentfulData } from "./graphql/config";
 import { BlogPostPageFragment } from "./graphql/fragments/blogArticles";
-import { BLOG_PAGE_QUERY } from "./graphql/queries/blog-page";
+import {
+  BLOG_PAGE_QUERY,
+  BLOG_PAGE_QUERY_GQL,
+} from "./graphql/queries/blog-page";
 
 export const getBlogPage = async (limit = 1, isDraftMode = false) => {
   try {
@@ -137,13 +140,15 @@ export const getBlogPostPageGQL = async (isDraftMode = false, limit = 3) => {
 
   const data = await createContentfulGraphqlClient(
     url,
-    BLOG_PAGE_QUERY,
+    BLOG_PAGE_QUERY_GQL,
     {
       isDraftMode,
       limit,
     },
     isDraftMode ? config.previewToken : config.accessToken
   );
+
+  console.log(data);
 
   return data;
 };

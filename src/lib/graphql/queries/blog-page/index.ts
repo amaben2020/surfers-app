@@ -12,7 +12,7 @@ export const BLOG_PAGE_QUERY = gql`
 `;
 
 const BlogPageItems = gql`
-  fragment BlogPageData on BlogPage {
+  # fragment BlogPageData on BlogPage {
     title
     hero {
       name
@@ -48,12 +48,12 @@ const BlogPageItems = gql`
         }
       }
     }
-  }
+  # }
 `;
 
 // reusable query with fragments
 export const BLOG_PAGE_QUERY_GQL = gql`
-  query(isDraftMode: Boolean!, limit: Int!) {
+  query FetchBlogPage($isDraftMode: Boolean!, $limit: Int!) {
     blogPageCollection( preview: $isDraftMode, limit: $limit) {
       items {
         ${BlogPageItems}

@@ -1,5 +1,9 @@
 import Select from "@/components/Select";
-import { getBlogArticleCategories, getBlogPage } from "@/lib/blogApi";
+import {
+  getBlogArticleCategories,
+  getBlogPage,
+  getBlogPostPageGQL,
+} from "@/lib/blogApi";
 import { draftMode } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +14,8 @@ const BlogPage = async () => {
   const landingPage = data?.items[0];
 
   const blogArticlecTags = await getBlogArticleCategories();
-
+  const blogData = await getBlogPostPageGQL();
+  console.log(blogData);
   // const blogGqlRequestData = await getBlogPageGQL(false, 2);
 
   return (
