@@ -129,3 +129,21 @@ export const getBlogPageGQL = async (isDraftMode = false, limit = 3) => {
 
   return data;
 };
+
+export const getBlogPostPageGQL = async (isDraftMode = false, limit = 3) => {
+  const url = configureContentfulUrl(process.env.CONTENTFUL_SPACE_ID!);
+
+  const config = configureEnvironment(process.env.CONTENTFUL_ENVIRONMENT!);
+
+  const data = await createContentfulGraphqlClient(
+    url,
+    BLOG_PAGE_QUERY,
+    {
+      isDraftMode,
+      limit,
+    },
+    isDraftMode ? config.previewToken : config.accessToken
+  );
+
+  return data;
+};
