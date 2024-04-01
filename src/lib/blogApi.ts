@@ -1,8 +1,8 @@
 import { configureEnvironment } from "@/utils/configManager";
-import { gql } from "graphql-request";
 import { createContentfulGraphqlClient } from "./config/gql-contentful";
 import { configureContentfulUrl, fetchContentfulData } from "./graphql/config";
 import { BlogPostPageFragment } from "./graphql/fragments/blogArticles";
+import { BLOG_PAGE_QUERY } from "./graphql/queries/blog-page";
 
 export const getBlogPage = async (limit = 1, isDraftMode = false) => {
   try {
@@ -117,19 +117,9 @@ export const getBlogPageGQL = async (isDraftMode = false, limit = 3) => {
 
   const config = configureEnvironment(process.env.CONTENTFUL_ENVIRONMENT!);
 
-  const document = gql`
-    query getBlogPageData($limit: Int!, $isDraftMode: Boolean) {
-      blogArticleCollection(limit: $limit, preview: $isDraftMode) {
-        items {
-          title
-          slug
-        }
-      }
-    }
-  `;
   const data = await createContentfulGraphqlClient(
     url,
-    document,
+    BLOG_PAGE_QUERY,
     {
       isDraftMode,
       limit,
