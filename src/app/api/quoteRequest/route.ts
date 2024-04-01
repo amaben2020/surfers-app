@@ -27,7 +27,7 @@ export const POST = async (request: NextRequest) => {
             "en-US": price,
           },
         },
-      },
+      }
     );
 
     return NextResponse.json({

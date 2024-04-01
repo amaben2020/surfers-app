@@ -19,7 +19,7 @@ async function fetchGraphQL(query: any, preview = false) {
       body: JSON.stringify({ query }),
       // Associate all fetches for articles with an "articles" cache tag so content can be revalidated or updated from Contentful on publish
       next: { tags: ["articles"] },
-    },
+    }
   ).then((response) => response.json());
 }
 
@@ -41,7 +41,7 @@ export async function getAllArticles(limit = 3, isDraftMode = false) {
           }
         }
       }`,
-    isDraftMode,
+    isDraftMode
   );
   return extractArticleEntries(articles);
 }
@@ -57,7 +57,7 @@ export async function getArticle(slug: string, isDraftMode = false) {
           }
         }
       }`,
-    isDraftMode,
+    isDraftMode
   );
 
   return extractArticleEntries(article)[0];

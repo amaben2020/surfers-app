@@ -14,7 +14,7 @@ export const getBlogPage = async (limit = 1, isDraftMode = false) => {
         }
       }`,
       isDraftMode,
-      "blogPost",
+      "blogPost"
     );
 
     return data.data?.blogPageCollection;
@@ -58,7 +58,7 @@ export const getBlogArticle = async (slug: string, isDraftMode = false) => {
 
 export const getBlogArticleCategory = async (
   slug: string,
-  isDraftMode = false,
+  isDraftMode = false
 ) => {
   try {
     const BLOG_ARTICLE_QUERY = `{

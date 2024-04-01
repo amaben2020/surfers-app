@@ -13,7 +13,7 @@ export default async function Home() {
   console.log(articles);
   console.log(
     "CONTENTFUL_STAGING_ACCESS_TOKEN",
-    process.env.CONTENTFUL_STAGING_ACCESS_TOKEN,
+    process.env.CONTENTFUL_STAGING_ACCESS_TOKEN
   );
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-white">

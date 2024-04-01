@@ -40,3 +40,5 @@ next-env.d.ts
 # migration files
 log-apply-*
 changeset-*
+
+migrate.sh

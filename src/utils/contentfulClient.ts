@@ -5,7 +5,7 @@ const contentfulClient = createClient(
   },
   {
     type: "plain",
-  },
+  }
 );
 
 export default contentfulClient;
