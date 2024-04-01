@@ -31,6 +31,6 @@ module.exports = function () {
   return contentfulClient
     .getSpace("jeqa1wtiqf6k")
     .then((space: any) =>
-      space.getEnvironment(process.env.CONTENTFUL_ENVIRONMENT || "master"),
+      space.getEnvironment(process.env.CONTENTFUL_ENVIRONMENT || "master")
     );
 };

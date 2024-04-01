@@ -17,7 +17,7 @@ export const POST = (request: NextRequest) => {
       },
       {
         status: 401,
-      },
+      }
     );
   }
 

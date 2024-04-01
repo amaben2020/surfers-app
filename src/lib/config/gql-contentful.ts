@@ -2,7 +2,7 @@ import { gql, GraphQLClient } from "graphql-request";
 
 export const createContentfulGraphqlClient = async (
   url: string,
-  query: string,
+  query: string
 ) => {
   // const document = gql`
   //   {

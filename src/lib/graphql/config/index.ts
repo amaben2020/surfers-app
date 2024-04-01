@@ -13,7 +13,7 @@ const configureContentfulUrl = (space: string) => {
 export const fetchContentfulData = async (
   query: any,
   preview = false,
-  tag = "",
+  tag = ""
 ) => {
   try {
     const url = configureContentfulUrl(process.env.CONTENTFUL_SPACE_ID!);

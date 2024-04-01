@@ -11,7 +11,7 @@ const BlogCategoryPage = async ({
   console.log(
     blogArticle.data.categoryCollection.items.map((item: any) => {
       return item.linkedFrom.blogArticleCollection.items;
-    }),
+    })
   );
 
   const articles = blogArticle.data.categoryCollection.items
