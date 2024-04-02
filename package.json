@@ -13,16 +13,23 @@
     "check-types": "tsc --pretty --noEmit",
     "check-lint": "eslint . --ext ts --ext tsx --ext js",
     "format": "prettier --write .",
-    "test-all": "npm run check-format && npm run check-types && npm run check-lint && npm run build"
+    "test-all": "npm run check-format && npm run check-types && npm run check-lint && npm run build",
+    "ctf:codegen": "contentful-typescript-codegen --output contentful/__generated__/types.ts",
+    "contentful-typescript-codegen": "contentful-typescript-codegen --output @types/generated/contentful.d.ts",
+    "graphql-codegen:generate": "graphql-codegen -r dotenv/config --config codegen.ts",
+    "graphql-codegen:watch": "graphql-codegen --watch -r dotenv/config --config codegen.ts"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.19.6",
+    "@graphql-codegen/introspection": "^4.0.3",
     "@graphql-codegen/typescript-graphql-request": "^6.2.0",
+    "@graphql-codegen/typescript-operations": "^4.2.0",
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
     "cf-content-types-generator": "^2.15.0",
     "contentful-management": "^11.24.3",
     "contentful-typescript-codegen": "^3.4.0",
+    "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
     "graphql-tag": "^2.12.6",
     "next": "^14.1.4",
@@ -31,6 +38,10 @@
     "ts-node": "^10.9.2"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.2",
+    "@graphql-codegen/client-preset": "^4.2.5",
+    "@graphql-codegen/typescript": "^4.0.6",
+    "@graphql-typed-document-node/core": "^3.2.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -42,6 +53,6 @@
     "postcss": "^8",
     "prettier": "^3.2.5",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "typescript": "^5.4.3"
   }
 }

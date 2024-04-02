@@ -7,6 +7,11 @@ import {
   BLOG_PAGE_QUERY_GQL,
 } from "./graphql/queries/blog-page";
 
+import {
+  BlogArticleLinkingCollections,
+  BlogPageCollection,
+} from "./__generated/sdk";
+
 export const getBlogPage = async (limit = 1, isDraftMode = false) => {
   try {
     const data = await fetchContentfulData(
@@ -133,22 +138,28 @@ export const getBlogPageGQL = async (isDraftMode = false, limit = 3) => {
   return data;
 };
 
-export const getBlogPostPageGQL = async (isDraftMode = false, limit = 3) => {
-  const url = configureContentfulUrl(process.env.CONTENTFUL_SPACE_ID!);
+export const getBlogPostPageGQL = async (
+  isDraftMode = false,
+  limit = 3
+): Promise<BlogArticleLinkingCollections["blogPageCollection"]> => {
+  try {
+    const url = configureContentfulUrl(process.env.CONTENTFUL_SPACE_ID!);
 
-  const config = configureEnvironment(process.env.CONTENTFUL_ENVIRONMENT!);
+    const config = configureEnvironment(process.env.CONTENTFUL_ENVIRONMENT!);
 
-  const data = await createContentfulGraphqlClient(
-    url,
-    BLOG_PAGE_QUERY_GQL,
-    {
-      isDraftMode,
-      limit,
-    },
-    isDraftMode ? config.previewToken : config.accessToken
-  );
+    // learnt a new trick using assertion to tell typescript what the object(data) represents.
+    const data = (await createContentfulGraphqlClient(
+      url,
+      BLOG_PAGE_QUERY_GQL,
+      {
+        isDraftMode,
+        limit,
+      },
+      isDraftMode ? config.previewToken : config.accessToken
+    )) as { blogPageCollection: BlogPageCollection };
 
-  console.log(data);
-
-  return data;
+    return data.blogPageCollection;
+  } catch (error) {
+    console.log(error);
+  }
 };

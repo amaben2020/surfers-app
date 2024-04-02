@@ -1,22 +1,21 @@
 import Select from "@/components/Select";
-import {
-  getBlogArticleCategories,
-  getBlogPage,
-  getBlogPostPageGQL,
-} from "@/lib/blogApi";
+import { getBlogArticleCategories, getBlogPostPageGQL } from "@/lib/blogApi";
 import { draftMode } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 
 const BlogPage = async () => {
   const { isEnabled } = draftMode();
-  const data = await getBlogPage(10, isEnabled);
-  const landingPage = data?.items[0];
+  // const data = await getBlogPage(10, isEnabled);
 
   const blogArticlecTags = await getBlogArticleCategories();
-  const blogData = await getBlogPostPageGQL();
-  console.log(blogData);
+  const data = await getBlogPostPageGQL(isEnabled, 10);
+  console.log(data);
+  // console.log(blogData);
   // const blogGqlRequestData = await getBlogPageGQL(false, 2);
+  const landingPage = data?.items[0];
+
+  console.log(landingPage?.topPostsCollection?.items);
 
   return (
     <div className="flex flex-col gap-y-10">
@@ -39,7 +38,7 @@ const BlogPage = async () => {
       </div>
 
       <div className="flex gap-6 mt-4">
-        {landingPage?.topPostsCollection.items?.map((item: any) => {
+        {landingPage?.topPostsCollection?.items?.map((item: any) => {
           console.log(item.cloudinaryImage);
 
           return (

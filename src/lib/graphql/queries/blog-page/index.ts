@@ -11,8 +11,7 @@ export const BLOG_PAGE_QUERY = gql`
   }
 `;
 
-const BlogPageItems = gql`
-  # fragment BlogPageData on BlogPage {
+const BlogPageItemsFragment = gql`
     title
     hero {
       name
@@ -25,6 +24,7 @@ const BlogPageItems = gql`
         description
       }
     }
+    
     cta {
       name
       link {
@@ -33,6 +33,7 @@ const BlogPageItems = gql`
         title
       }
     }
+    
     topPostsCollection(limit: 30) {
       total
       items {
@@ -41,6 +42,7 @@ const BlogPageItems = gql`
         image {
           url
         }
+        cloudinaryImage
 
         venue {
           lat
@@ -48,7 +50,6 @@ const BlogPageItems = gql`
         }
       }
     }
-  # }
 `;
 
 // reusable query with fragments
@@ -56,7 +57,7 @@ export const BLOG_PAGE_QUERY_GQL = gql`
   query FetchBlogPage($isDraftMode: Boolean!, $limit: Int!) {
     blogPageCollection( preview: $isDraftMode, limit: $limit) {
       items {
-        ${BlogPageItems}
+        ${BlogPageItemsFragment}
       }
     }
   }
