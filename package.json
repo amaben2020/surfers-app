@@ -14,8 +14,6 @@
     "check-lint": "eslint . --ext ts --ext tsx --ext js",
     "format": "prettier --write .",
     "test-all": "npm run check-format && npm run check-types && npm run check-lint && npm run build",
-    "ctf:codegen": "contentful-typescript-codegen --output contentful/__generated__/types.ts",
-    "contentful-typescript-codegen": "contentful-typescript-codegen --output @types/generated/contentful.d.ts",
     "graphql-codegen:generate": "graphql-codegen -r dotenv/config --config codegen.ts",
     "graphql-codegen:watch": "graphql-codegen --watch -r dotenv/config --config codegen.ts"
   },
