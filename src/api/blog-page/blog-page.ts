@@ -1,16 +1,16 @@
-import { configureEnvironment } from "@/utils/configManager";
-import { createContentfulGraphqlClient } from "./config/gql-contentful";
-import { configureContentfulUrl, fetchContentfulData } from "./graphql/config";
-import { BlogPostPageFragment } from "./graphql/fragments/blogArticles";
+import { configureEnvironment } from "@/base/environments/contentfulEnvManager";
+import { configureContentfulUrl, fetchContentfulData } from "../../base/config";
+import { createContentfulGraphqlClient } from "../../base/config/gql-contentful";
+import { BlogPostPageFragment } from "../graphql/fragments/blogArticles";
 import {
   BLOG_PAGE_QUERY,
   BLOG_PAGE_QUERY_GQL,
-} from "./graphql/queries/blog-page";
+} from "../graphql/queries/blog-page";
 
 import {
   BlogArticleLinkingCollections,
   BlogPageCollection,
-} from "./__generated/sdk";
+} from "../../lib/__generated/sdk";
 
 export const getBlogPage = async (limit = 1, isDraftMode = false) => {
   try {

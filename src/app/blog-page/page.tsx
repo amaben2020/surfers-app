@@ -1,5 +1,8 @@
+import {
+  getBlogArticleCategories,
+  getBlogPostPageGQL,
+} from "@/api/blog-page/blog-page";
 import Select from "@/components/Select";
-import { getBlogArticleCategories, getBlogPostPageGQL } from "@/lib/blogApi";
 import { draftMode } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";

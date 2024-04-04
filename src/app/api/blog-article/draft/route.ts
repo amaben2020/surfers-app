@@ -1,4 +1,4 @@
-import { getBlogArticle } from "@/lib/blogApi";
+import { getBlogArticle } from "@/api/blog-page/blog-page";
 
 import { draftMode } from "next/headers";
 import { redirect } from "next/navigation";

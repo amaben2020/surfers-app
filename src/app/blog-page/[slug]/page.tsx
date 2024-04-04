@@ -1,6 +1,6 @@
+import { getBlogArticle, getBlogPage } from "@/api/blog-page/blog-page";
 import RichText from "@/components/RichText";
-import { formatBlogArticlesSlug } from "@/lib/adapters/formatBlogArticlesSlug";
-import { getBlogArticle, getBlogPage } from "@/lib/blogApi";
+import { formatBlogArticlesSlug } from "@/app/blog-page/[slug]/adapters/formatBlogArticlesSlug";
 import { draftMode } from "next/headers";
 import Image from "next/image";
 import NotFound from "./not-found";

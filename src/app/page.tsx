@@ -1,4 +1,4 @@
-import { getAllArticles } from "@/lib/api";
+import { getAllArticles } from "@/api/articles/articles";
 
 import { draftMode } from "next/headers";
 

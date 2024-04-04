@@ -1,4 +1,4 @@
-import { getBlogArticleCategory } from "@/lib/blogApi";
+import { getBlogArticleCategory } from "@/api/blog-page/blog-page";
 import Link from "next/link";
 
 const BlogCategoryPage = async ({

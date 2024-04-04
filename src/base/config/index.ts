@@ -1,4 +1,4 @@
-import { configureEnvironment } from "@/utils/configManager";
+import { configureEnvironment } from "@/base/environments/contentfulEnvManager";
 
 const BASE_URL = "https://graphql.contentful.com";
 // make 1 reusable fetch for all instances
@@ -11,7 +11,7 @@ export const configureContentfulUrl = (space: string) => {
 };
 
 export const fetchContentfulData = async (
-  query: any,
+  query: string,
   preview = false,
   tag = ""
 ) => {
@@ -28,7 +28,7 @@ export const fetchContentfulData = async (
         }`,
       },
       body: JSON.stringify({ query }),
-      next: { tags: [tag] }, // could be passed dynamically to many pages
+      next: { tags: [tag] }, // could be passed dynamically to many pages for revalidation
     });
 
     return await response.json();

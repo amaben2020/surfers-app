@@ -1,5 +1,5 @@
-import { configureEnvironment } from "@/utils/configManager";
-import { ARTICLE_GRAPHQL_FIELDS } from "./graphql/articles";
+import { configureEnvironment } from "@/base/environments/contentfulEnvManager";
+import { ARTICLE_GRAPHQL_FIELDS } from "../graphql/queries/articles/articles";
 
 // extend this function to accept tags text for next js
 async function fetchGraphQL(query: any, preview = false) {
@@ -47,8 +47,9 @@ export async function getAllArticles(limit = 3, isDraftMode = false) {
 }
 
 export async function getArticle(slug: string, isDraftMode = false) {
-  const article = await fetchGraphQL(
-    `query {
+  try {
+    const article = await fetchGraphQL(
+      `query {
         knowledgeArticlesCollection(where:{slug: "${slug}"}, limit: 1, preview: ${
           isDraftMode ? "true" : "false"
         }) {
@@ -57,8 +58,11 @@ export async function getArticle(slug: string, isDraftMode = false) {
           }
         }
       }`,
-    isDraftMode
-  );
+      isDraftMode
+    );
 
-  return extractArticleEntries(article)[0];
+    return extractArticleEntries(article)[0];
+  } catch (error) {
+    console.log(error);
+  }
 }
