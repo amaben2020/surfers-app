@@ -1,6 +1,6 @@
 import { GraphQLClient } from "graphql-request";
 
-export const createContentfulGraphqlClient = async (
+export const contentfulGQLClient = async (
   url: string,
   query: string,
   variables: Record<string, string | boolean | number>,

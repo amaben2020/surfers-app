@@ -1,6 +1,6 @@
 import { configureEnvironment } from "@/base/environments/contentfulEnvManager";
 import { configureContentfulUrl, fetchContentfulData } from "../../base/config";
-import { createContentfulGraphqlClient } from "../../base/config/gql-contentful";
+import { contentfulGQLClient } from "../../base/config/gql-contentful";
 import { BlogPostPageFragment } from "../graphql/fragments/blogArticles";
 import {
   BLOG_PAGE_QUERY,
@@ -125,7 +125,7 @@ export const getBlogPageGQL = async (isDraftMode = false, limit = 3) => {
 
   const config = configureEnvironment(process.env.CONTENTFUL_ENVIRONMENT!);
 
-  const data = await createContentfulGraphqlClient(
+  const data = await contentfulGQLClient(
     url,
     BLOG_PAGE_QUERY,
     {
@@ -148,7 +148,7 @@ export const getBlogPostPageGQL = async (
     const config = configureEnvironment(process.env.CONTENTFUL_ENVIRONMENT!);
 
     // learnt a new trick using assertion to tell typescript what the object(data) represents.
-    const data = (await createContentfulGraphqlClient(
+    const data = (await contentfulGQLClient(
       url,
       BLOG_PAGE_QUERY_GQL,
       {
