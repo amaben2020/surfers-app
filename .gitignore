@@ -43,3 +43,4 @@ log-apply-*
 changeset-*
 
 migrate.sh
+*storybook.log

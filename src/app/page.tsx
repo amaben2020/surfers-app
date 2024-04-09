@@ -1,14 +1,19 @@
-import { getAllArticles } from "@/api/articles/articles";
-
 import { draftMode } from "next/headers";
 
+import { getAllArticles } from "@/api/articles/articles";
 import Image from "next/image";
 import Link from "next/link";
+import { DataRequiredError } from "./error/api";
 
 export default async function Home() {
   const { isEnabled } = draftMode();
 
   const articles = await getAllArticles(4, isEnabled);
+
+  // error propagation
+  if (!articles.length) {
+    throw new DataRequiredError();
+  }
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-white">
