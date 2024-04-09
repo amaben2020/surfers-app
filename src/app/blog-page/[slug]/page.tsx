@@ -1,13 +1,13 @@
 import { getBlogArticle, getBlogPage } from "@/api/blog-page/blog-page";
-import RichText from "@/components/RichText";
 import { formatBlogArticlesSlug } from "@/app/blog-page/[slug]/adapters/formatBlogArticlesSlug";
+import RichText from "@/components/RichText";
 import { draftMode } from "next/headers";
 import Image from "next/image";
 import NotFound from "./not-found";
 
-interface BlogPostPageParams {
-  slug: string;
-}
+// interface BlogPostPageParams {
+//   slug: string;
+// }
 
 export async function generateStaticParams() {
   const posts = await getBlogPage();
@@ -33,11 +33,15 @@ export async function generateStaticParams() {
 //   };
 // }
 
+// implement cache for cf data
+
 const BlogPage = async ({ params }: { params: { slug: string } }) => {
   const { isEnabled } = draftMode();
 
-  const { data } = await getBlogArticle(params.slug, isEnabled);
+  // const { data } = cache(getBlogArticle(params.slug, isEnabled));
 
+  const { data } = await getBlogArticle(params.slug, isEnabled);
+  console.log("DATA", data);
   const blogPost = data?.blogArticleCollection?.items[0];
 
   console.log(data);

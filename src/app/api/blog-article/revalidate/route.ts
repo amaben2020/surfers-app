@@ -1,8 +1,8 @@
 import { revalidateTag } from "next/cache";
 import { headers } from "next/headers";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
-export const POST = (request: NextRequest) => {
+export const POST = () => {
   // get secret from header
   const headersList = headers();
 

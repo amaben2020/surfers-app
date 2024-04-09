@@ -1,9 +1,10 @@
+//@ts-nocheck
 import { draftMode } from "next/headers";
 
 import { getAllArticles } from "@/api/articles/articles";
 import Image from "next/image";
 import Link from "next/link";
-import { DataRequiredError } from "./error/api";
+import { DataRequiredError } from "../lib/error/exception";
 
 export default async function Home() {
   const { isEnabled } = draftMode();

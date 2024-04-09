@@ -35,7 +35,7 @@ import { NextRequest } from "next/server";
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
 
-  const secret = searchParams.get("secret");
+  // const secret = searchParams.get("secret");
   const slug = searchParams.get("slug");
 
   // if (  !slug) {

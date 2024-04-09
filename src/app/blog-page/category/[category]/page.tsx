@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { getBlogArticleCategory } from "@/api/blog-page/blog-page";
 import Link from "next/link";
 

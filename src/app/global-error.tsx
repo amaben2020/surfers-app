@@ -10,7 +10,11 @@ type ErrorProps = {
 };
 
 const GlobalError = ({ error, reset }: ErrorProps) => {
-  return <div>GlobalError {error.name}</div>;
+  return (
+    <div>
+      GlobalError {error.name} <button onClick={reset}>Reset</button>
+    </div>
+  );
 };
 
 export default GlobalError;

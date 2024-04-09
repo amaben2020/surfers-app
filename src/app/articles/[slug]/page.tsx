@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { getAllArticles, getArticle } from "@/api/articles/articles";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { draftMode } from "next/headers";

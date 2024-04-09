@@ -7,6 +7,7 @@ import {
   BLOG_PAGE_QUERY_GQL,
 } from "../graphql/queries/blog-page";
 
+import { cache } from "react";
 import {
   BlogArticleLinkingCollections,
   BlogPageCollection,
@@ -34,9 +35,10 @@ export const getBlogPage = async (limit = 1, isDraftMode = false) => {
   }
 };
 
-export const getBlogArticle = async (slug: string, isDraftMode = false) => {
-  try {
-    const BLOG_ARTICLE_QUERY = `query GetBlogArticle  {
+export const getBlogArticle = cache(
+  async (slug: string, isDraftMode = false) => {
+    try {
+      const BLOG_ARTICLE_QUERY = `query GetBlogArticle  {
       blogArticleCollection(where:{slug: "${slug}"}, preview: ${
         isDraftMode ? "true" : "false"
       }){
@@ -60,12 +62,13 @@ export const getBlogArticle = async (slug: string, isDraftMode = false) => {
       }
     }`;
 
-    const data = await fetchContentfulData(BLOG_ARTICLE_QUERY, isDraftMode);
-    return data;
-  } catch (error) {
-    console.log(error);
+      const data = await fetchContentfulData(BLOG_ARTICLE_QUERY, isDraftMode);
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
   }
-};
+);
 
 export const getBlogArticleCategory = async (
   slug: string,

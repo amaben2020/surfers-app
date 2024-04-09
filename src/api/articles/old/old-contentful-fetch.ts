@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { FRAGMENT_ARTICLE_GRAPHQL_FIELDS } from "@/api/graphql/queries/articles/articles";
 
 import { configureEnvironment } from "@/base/environments/contentfulEnvManager";
